@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+html,body{
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Customizing the carousel card. Show the stepper only on hover  */
+.carouselCard .MuiMobileStepper-root {
+  opacity: 0;
+  transition: all ease 1000ms;
+}
+
+.carouselCard:hover .MuiMobileStepper-root {
+  opacity:1
+}
+
+.carouselCard:hover .MuiMobileStepper-dotActive {
+  background-color: #fff
+}
