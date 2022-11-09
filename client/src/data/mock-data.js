@@ -33,6 +33,7 @@ import {
   import { FaCampground, FaUmbrellaBeach, FaSwimmingPool,FaCarrot,FaEgg,FaFish } from 'react-icons/fa';
   import { RiEarthquakeFill } from 'react-icons/ri';
   import { IoFastFood } from 'react-icons/io5';
+
   
   
   export const locationsTab = [
@@ -57,6 +58,27 @@ import {
     { id: 19, label: 'Meat', icon: <GiMeat size={24} /> },
     { id: 20, label: 'Fish', icon: <FaFish size={24} /> },
   ];
+  export const ads= [{
+    id:1,
+    locationImages: [
+      {
+        id:1,
+        url:'https://www.bigbasket.com/media/uploads/banner_images/2211651-bbpl-staples_460_Bangalore.jpg'
+      },
+      {
+        id:2,
+        url:'https://previews.123rf.com/images/maryaros/maryaros1904/maryaros190400022/122601702-flyers-set-for-grocery-store-with-sale-advertising.jpg'
+      },
+      {
+        id:3,
+        url:''
+      },
+      {
+        id:4,
+        url:''
+      }
+    ]
+  }]
   
   export const locations = [
     {
