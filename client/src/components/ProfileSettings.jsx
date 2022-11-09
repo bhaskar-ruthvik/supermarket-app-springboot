@@ -15,9 +15,10 @@ const ProfileSettings = () => {
     <Box sx={flexCenter}>
     <Link to="/signup"> Become A User</Link>
     <Stack>
-        <Button>
+        <Link to="/cart"><Button>
             <IoCartOutline size={24} />
         </Button>
+        </Link>
         <Button 
         sx={{
             borderRadius: 10, border: '1px solid #ddd'
