@@ -9,9 +9,10 @@ import {IoSearchCircleSharp} from 'react-icons/io5';
 import {red} from '@mui/material/colors'
 
 const choices = [
-    { id:1,text:'Anywhere'},
-    {id:2, text:'Any week'},
-    {id: 3, text:'Add guest',withIcon: true}]
+    { id:1,text:'Search Groceries',withIcon:true},
+    // {id:2, text:'Any week'},
+    // {id: 3, text:'Add guest',withIcon: true}
+]
     
 
 

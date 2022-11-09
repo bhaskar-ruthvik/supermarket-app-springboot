@@ -3,14 +3,26 @@ import {
     MdHouseSiding,
     MdOutlineWater,
     MdCabin,
+    MdOutlineFoodBank,
+    MdOutlinePets,MdCleanHands,
+    MdCleaningServices
   } from 'react-icons/md';
   import { BsSnow } from 'react-icons/bs';
   import { BiHomeAlt } from 'react-icons/bi';
   import {
     GiKidSlide,
+    GiFruitBowl,
+    GiCakeSlice,
     GiSpaceNeedle,
+    GiMilkCarton,
     GiCampingTent,
+    GiOpenedFoodCan,
     GiLightningDome,
+    GiBabyBottle,
+    GiHealthNormal,
+    GiForkKnifeSpoon,
+    GiFlowerPot,
+    GiMeat,
     GiEvilTree,
     GiWaveSurfer,
     GiMountainCave,
@@ -18,31 +30,32 @@ import {
     GiGolfFlag,
   } from 'react-icons/gi';
   import { AiOutlineCoffee } from 'react-icons/ai';
-  import { FaCampground, FaUmbrellaBeach, FaSwimmingPool } from 'react-icons/fa';
+  import { FaCampground, FaUmbrellaBeach, FaSwimmingPool,FaCarrot,FaEgg,FaFish } from 'react-icons/fa';
   import { RiEarthquakeFill } from 'react-icons/ri';
+  import { IoFastFood } from 'react-icons/io5';
   
   
   export const locationsTab = [
-    { id: 1, label: 'Design', icon: <MdOutlineApartment size={24} /> },
-    { id: 2, label: 'Arctic', icon: <BsSnow size={24} /> },
-    { id: 3, label: 'Shared Homes', icon: <MdHouseSiding size={24} /> },
-    { id: 4, label: 'LakeFront', icon: <MdOutlineWater size={24} /> },
-    { id: 5, label: 'National Parks', icon: <GiKidSlide size={24} /> },
-    { id: 6, label: 'Bed & Breakfast ', icon: <AiOutlineCoffee size={24} /> },
-    { id: 7, label: 'OMG!', icon: <GiSpaceNeedle size={24} /> },
-    { id: 8, label: 'Camping', icon: <FaCampground size={24} /> },
-    { id: 9, label: 'A-frames', icon: <GiCampingTent size={24} /> },
-    { id: 10, label: 'Domes', icon: <GiLightningDome size={24} /> },
-    { id: 11, label: 'Tiny Homes', icon: <BiHomeAlt size={24} /> },
-    { id: 12, label: 'Treehouses', icon: <GiEvilTree size={24} /> },
-    { id: 13, label: 'Surfing', icon: <GiWaveSurfer size={24} /> },
-    { id: 14, label: 'CountrySide', icon: <GiMountainCave size={24} /> },
-    { id: 15, label: 'Caves', icon: <GiCaveEntrance size={24} /> },
-    { id: 16, label: 'Golfing', icon: <GiGolfFlag size={24} /> },
-    { id: 17, label: 'Cabins', icon: <MdCabin size={24} /> },
-    { id: 18, label: 'Earth Homes', icon: <RiEarthquakeFill size={24} /> },
-    { id: 19, label: 'Tropical', icon: <FaUmbrellaBeach size={24} /> },
-    { id: 20, label: 'Amazing Pools', icon: <FaSwimmingPool size={24} /> },
+    { id: 1, label: 'Fruits', icon: <GiFruitBowl size={24} /> },
+    { id: 2, label: 'Vegetables', icon: <FaCarrot size={24} /> },
+    { id: 3, label: 'Bakery', icon: <GiCakeSlice size={24} /> },
+    { id: 4, label: 'Dairy', icon: <GiMilkCarton size={24} /> },
+    { id: 5, label: 'Household', icon: <BiHomeAlt size={24} /> },
+    { id: 6, label: 'Beverages ', icon: <AiOutlineCoffee size={24} /> },
+    { id: 7, label: 'Beauty', icon: <GiSpaceNeedle size={24} /> },
+    { id: 8, label: 'Snacks', icon: <IoFastFood size={24} /> },
+    { id: 9, label: 'Gourmet', icon: <MdOutlineFoodBank size={24} /> },
+    { id: 10, label: 'World Food', icon: <GiOpenedFoodCan size={24} /> },
+    { id: 11, label: 'Baby Care', icon: <GiBabyBottle size={24} /> },
+    { id: 12, label: 'Hygiene', icon: <MdCleanHands  size={24} /> },
+    { id: 13, label: 'Kitchen', icon: <GiForkKnifeSpoon size={24} /> },
+    { id: 14, label: 'Garden', icon: <GiFlowerPot size={24} /> },
+    { id: 15, label: 'Pets', icon: <MdOutlinePets size={24} /> },
+    { id: 16, label: 'Cleaning', icon: <MdCleaningServices size={24} /> },
+    { id: 17, label: 'Medicines', icon: <GiHealthNormal size={24} /> },
+    { id: 18, label: 'Eggs', icon: <FaEgg size={24} /> },
+    { id: 19, label: 'Meat', icon: <GiMeat size={24} /> },
+    { id: 20, label: 'Fish', icon: <FaFish size={24} /> },
   ];
   
   export const locations = [
@@ -51,24 +64,24 @@ import {
       locationImages: [
         {
           id: 1,
-          url: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0c9550c9d053465a87fbae160006f591_9366/Harden_Vol._6_Shoes_White_GV9081_01_standard.jpg',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg',
         },
         {
           id: 2,
-          url: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7e17f28e668248e9865eae160006a582_9366/Harden_Vol._6_Shoes_White_GV9081_04_standard.jpg',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg',
         },
         {
           id: 3,
-          url: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0829705828d34db890a9ae160005a6f0_9366/Harden_Vol._6_Shoes_White_GV9081_05_standard.jpg',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg',
         },
         {
           id: 4,
-          url: 'https://images.unsplash.com/photo-1629447236132-22c57cd0f0bf?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg',
         },
       ],
-      location: 'Harden Volume 6',
-      days: 'Oct 9th',
-      price: '$200',
+      location: 'Lays Hot \'n\' Sweet Chilli',
+      days: 'Nov 9th',
+      price: 'Rs.29',
       isNew: true,
       rating: 4.5,
     },
@@ -77,24 +90,24 @@ import {
       locationImages: [
         {
           id: 1,
-          url: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/251023_11-coca-cola-soft-drink-original-taste.jpg',
         },
         {
           id: 2,
-          url: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/251023-2_7-coca-cola-soft-drink-original-taste.jpg',
         },
         {
           id: 3,
-          url: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=400&h=250&q=80',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/251023-3_7-coca-cola-soft-drink-original-taste.jpg',
         },
         {
           id: 4,
-          url: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/251023-4_5-coca-cola-soft-drink-original-taste.jpg',
         },
       ],
-      location: 'Joshua tree, USA',
-      days: 'Sep 2-11',
-      price: '$3000 CAD night',
+      location: 'Coca-Cola',
+      days: 'Nov 9th',
+      price: 'Rs.39',
       isNew: false,
       rating: 4.99,
     },
@@ -103,24 +116,24 @@ import {
       locationImages: [
         {
           id: 1,
-          url: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/277584_30-cadbury-oreo-creme-biscuit-vanilla-original.jpg',
         },
         {
           id: 2,
-          url: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/277584-4_10-cadbury-oreo-creme-biscuit-vanilla-original.jpg',
         },
         {
           id: 3,
-          url: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=400&h=250&q=80',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/277584-5_9-cadbury-oreo-creme-biscuit-vanilla-original.jpg',
         },
         {
           id: 4,
-          url: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/s/277584-9_2-cadbury-oreo-creme-biscuit-vanilla-original.jpg',
         },
       ],
-      location: 'Uvita rosa, Costa Rica',
-      days: 'Nov 19-22',
-      price: '$1,129 CAD night',
+      location: 'OREO Original',
+      days: 'Nov 9th',
+      price: 'Rs.30',
       isNew: true,
       rating: 4.6,
     },
@@ -129,24 +142,24 @@ import {
       locationImages: [
         {
           id: 1,
-          url: 'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/264454_1-haldirams-namkeen-aloo-bhujia.jpg',
         },
         {
           id: 2,
-          url: 'https://images.unsplash.com/photo-1475113548554-5a36f1f523d6?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/264454-2_1-haldirams-namkeen-aloo-bhujia.jpg',
         },
         {
           id: 3,
-          url: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=400&h=250&q=80',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/264454-3_1-haldirams-namkeen-aloo-bhujia.jpg',
         },
         {
           id: 4,
-          url: 'https://images.unsplash.com/photo-1505144808419-1957a94ca61e?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/264454-4_1-haldirams-namkeen-aloo-bhujia.jpg',
         },
       ],
-      location: 'Navidad, Chile',
-      days: 'Sep 13-18',
-      price: '$208 CAD night',
+      location: 'Haldirams Aloo Bhujia',
+      days: 'Nov 10th',
+      price: 'Rs.50',
       isNew: false,
       rating: 4.2,
     },
@@ -155,24 +168,24 @@ import {
       locationImages: [
         {
           id: 1,
-          url: 'https://images.unsplash.com/photo-1647891940243-77a6483a152e?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/1204455-2_1-fortune-sunflower-refined-oil-sun-lite.jpg',
         },
         {
           id: 2,
-          url: 'https://images.unsplash.com/photo-1604537529428-15bcbeecfe4d?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/1204455-4_1-fortune-sunflower-refined-oil-sun-lite.jpg',
         },
         {
           id: 3,
-          url: 'https://images.unsplash.com/photo-1587502537104-aac10f5fb6f7?auto=format&fit=crop&w=400&h=250&q=80',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/1204455-5_1-fortune-sunflower-refined-oil-sun-lite.jpg',
         },
         {
           id: 4,
-          url: 'https://images.unsplash.com/photo-1587502537815-0c8b5c9ba39a?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/1204455-6_1-fortune-sunflower-refined-oil-sun-lite.jpg',
         },
       ],
-      location: 'Paraty, Brazil',
-      days: 'Aug 1-6',
-      price: '$243 CAD night',
+      location: 'Fortune Refined Sunflower Oil',
+      days: 'Nov 13th',
+      price: 'Rs.176',
       isNew: true,
       rating: 4.1,
     },
@@ -181,24 +194,24 @@ import {
       locationImages: [
         {
           id: 1,
-          url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/20001214_15-bb-royal-sona-masoori-raw-rice.jpg',
         },
         {
           id: 2,
-          url: 'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/20001214-3_8-bb-royal-sona-masoori-raw-rice.jpg',
         },
         {
           id: 3,
-          url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&h=250&q=80',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/20001214-2_10-bb-royal-sona-masoori-raw-rice.jpg',
         },
         {
           id: 4,
           url: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=400&h=250&q=60',
         },
       ],
-      location: 'Raelington, Norway',
-      days: 'Oct 9-15',
-      price: '$698 CAD night',
+      location: 'BB Royal Sona Masoori Rice',
+      days: 'Nov 9th',
+      price: 'Rs.1199',
       isNew: false,
       rating: 4.6,
     },
@@ -207,24 +220,24 @@ import {
       locationImages: [
         {
           id: 1,
-          url: 'https://images.unsplash.com/photo-1504567961542-e24d9439a724?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/30005417_8-bb-popular-sugar.jpg',
         },
         {
           id: 2,
-          url: 'https://images.unsplash.com/photo-1499002238440-d264edd596ec?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/30005417-3_7-bb-popular-sugar.jpg',
         },
         {
           id: 3,
-          url: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=400&h=250&q=80',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/30005417-6_10-bb-popular-sugar.jpg',
         },
         {
           id: 4,
-          url: 'https://images.unsplash.com/photo-1462216589242-9e3e00a47a48?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/30005417-7_1-bb-popular-sugar.jpg',
         },
       ],
-      location: 'Terrasini, Italy',
-      days: 'June 7-12',
-      price: '$467 CAD night',
+      location: 'BB Popular Sugar',
+      days: 'Nov 11th',
+      price: 'Rs.213',
       isNew: true,
       rating: 4.7,
     },
@@ -233,24 +246,24 @@ import {
       locationImages: [
         {
           id: 1,
-          url: 'https://images.unsplash.com/photo-1523528283115-9bf9b1699245?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/126906_8-aashirvaad-atta-whole-wheat.jpg',
         },
         {
           id: 2,
-          url: 'https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/126906-3_8-aashirvaad-atta-whole-wheat.jpg',
         },
         {
           id: 3,
-          url: 'https://images.unsplash.com/photo-1496256654245-8f3d0ef3bebe?auto=format&fit=crop&w=400&h=250&q=80',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/126906-5_8-aashirvaad-atta-whole-wheat.jpg',
         },
         {
           id: 4,
-          url: 'https://images.unsplash.com/photo-1504392022767-a8fc0771f239?auto=format&fit=crop&w=400&h=250&q=60',
+          url: 'https://www.bigbasket.com/media/uploads/p/l/126906-8_2-aashirvaad-atta-whole-wheat.jpg',
         },
       ],
-      location: 'San Jose, Mexico',
-      days: 'Jun 11-16',
-      price: '$1,767 CAD night',
+      location: 'Aashirvaad Whole Wheat Atta',
+      days: 'Nov 16th',
+      price: 'Rs. 466',
       isNew: false,
       rating: 4.8,
     },

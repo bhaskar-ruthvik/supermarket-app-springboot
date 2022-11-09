@@ -40,17 +40,17 @@ function SignUp() {
                     <Link to="/signin">    Sign In</Link>
                     </p>
                 </div>
-                <div class="login-form-footer">
+                {/* <div class="login-form-footer">
                     <a href="#">
                         <img width="30"
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK5q0FP74VV9wbfwP378_7kj7iDomHuKrxkXsxDdUT28V9dlVMNUe-EMzaLwaFhneeuZI&usqp=CAU"/>
                         Google Login
                     </a>
-                </div>
+                </div> */}
             </form>
         </div>
         <div class="login-right">
-            <img src="./image.svg" alt="image"/>
+            <img src="./signIn.svg" alt="image"/>
         </div>
     </div>  
     </div>
