@@ -63,9 +63,10 @@ export const flexBetween = {
   };
   
   export const carouselImage = {
-    height: 275,
+    height: 305,
     display: 'block',
     overflow: 'hidden',
     width: '100%',
+    paddingLeft: '2px',
     borderRadius: 3,
   };
