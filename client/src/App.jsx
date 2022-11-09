@@ -1,3 +1,4 @@
+import Cart from "pages/Cart";
 import HomePage from "pages/HomePage";
 import SignIn from "pages/signup/SignIn";
 import SignUp from "pages/signup/SignUp";
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<HomePage/>} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/signin" element={<SignIn/>} />
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
     </Router>
   );
