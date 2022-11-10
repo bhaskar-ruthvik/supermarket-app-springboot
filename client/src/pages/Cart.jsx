@@ -99,7 +99,7 @@ function Cart() {
 
     <div class="cart-item-box">
 
-      <h2 class="section-heading">Order Summery</h2>
+      <h2 class="section-heading">Order Summary</h2>
 
       <div class="product-card">
 
