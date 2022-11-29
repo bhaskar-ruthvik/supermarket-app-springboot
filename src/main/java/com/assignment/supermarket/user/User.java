@@ -1,5 +1,8 @@
 package com.assignment.supermarket.user;
 
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class User {
 
     private Long userID;
@@ -27,7 +30,9 @@ public class User {
         this.email = email;
         this.address = address;
     }
+    public User(){
 
+    }
     public User(Long userID,String username, String phoneNumber, String email, String address) {
         this.userID = userID;
         this.username = username;
