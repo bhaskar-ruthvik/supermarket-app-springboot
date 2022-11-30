@@ -1,0 +1,16 @@
+"ID","IsNew","Rating","ItemName","Dates","Price","URL1","URL2","URL3","URL4"
+1,True,4.5,"'Lays Hot n Sweet Chilli'","""Nov 9th'","'Rs.29'",NULL,NULL,NULL,NULL
+2,False,4.99,"'Coca-Cola'","""Nov 9th'","'Rs.39'",NULL,NULL,NULL,NULL
+3,True,4.6,"'Oreo original'","""Nov 9th'","'Rs.30'",NULL,NULL,NULL,NULL
+4,False,4.2,"'Haldirams Aloo Bhujia'","'Nov 10th'","'Rs.50'",NULL,NULL,NULL,NULL
+5,True,4.1,"'Fortune Refined Sunflower Oil'","'Nov 13th'","'Rs.176'",NULL,NULL,NULL,NULL
+6,False,4.6,"'Sona Masoori Rice'","'Nov 9th'","'Rs.1199'",NULL,NULL,NULL,NULL
+7,True,4.7,"'Sugar'","'Nov 11th'
+","'Rs.213'
+",NULL,NULL,NULL,NULL
+8,False,4.8,"'Aashirvaad Whole Wheat Atta'","'Nov 13th'","'Rs.466'
+",NULL,NULL,NULL,NULL
+9,True,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+10,False,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+11,True,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+12,False,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
