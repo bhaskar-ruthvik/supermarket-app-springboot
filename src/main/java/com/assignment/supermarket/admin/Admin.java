@@ -18,7 +18,7 @@ public class Admin extends User {
             strategy = GenerationType.SEQUENCE,
             generator = "admin_sequence"
     )
-    Long managerId;
+    Long adminId;
     public Admin(){
 
     }
@@ -26,4 +26,11 @@ public class Admin extends User {
         super(username,phoneNumber,email,address);
     }
 
+    public Long getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(Long adminId) {
+        this.adminId = adminId;
+    }
 }

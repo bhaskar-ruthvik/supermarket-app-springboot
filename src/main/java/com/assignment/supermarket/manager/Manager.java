@@ -16,6 +16,7 @@ public class Manager extends User {
             )
             @GeneratedValue(
                     strategy = GenerationType.SEQUENCE,
+
                     generator = "manager_sequence"
             )
     Long managerId;
@@ -25,5 +26,13 @@ public class Manager extends User {
     }
     public Manager(){
 
+    }
+
+    public Long getManagerId() {
+        return managerId;
+    }
+
+    public void setManagerId(Long managerId) {
+        this.managerId = managerId;
     }
 }

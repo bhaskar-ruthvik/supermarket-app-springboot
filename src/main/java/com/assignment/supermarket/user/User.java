@@ -5,7 +5,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class User {
 
-    private Long userID;
+//    private Long userID;
     private String username;
 
     private String phoneNumber;
@@ -20,9 +20,9 @@ public class User {
         this.username = username;
     }
 
-    public Long getUserID() {
-        return userID;
-    }
+//    public Long getUserID() {
+//        return userID;
+//    }
 
     public User(String username, String phoneNumber, String email, String address) {
         this.username = username;
@@ -33,17 +33,17 @@ public class User {
     public User(){
 
     }
-    public User(Long userID,String username, String phoneNumber, String email, String address) {
-        this.userID = userID;
-        this.username = username;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-    }
+//    public User(Long userID,String username, String phoneNumber, String email, String address) {
+//        this.userID = userID;
+//        this.username = username;
+//        this.phoneNumber = phoneNumber;
+//        this.email = email;
+//        this.address = address;
+//    }
 
-    public void setUserID(Long userID) {
-        this.userID = userID;
-    }
+//    public void setUserID(Long userID) {
+//        this.userID = userID;
+//    }
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -73,7 +73,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
-                ", userID=" + userID +
+//                ", userID=" + userID +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +

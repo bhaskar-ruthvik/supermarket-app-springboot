@@ -2,9 +2,7 @@ package com.assignment.supermarket.manager;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,14 @@ public class ManagerController {
     @GetMapping
     public List<Manager> getManagers(){
         return managerService.getManagers();
+    }
+    @PostMapping
+    public void registerNewManager(@RequestBody Manager manager){
+
+        managerService.addNewManager(manager);
+    }
+    @DeleteMapping(path = "{managerId}")
+    public void deleteManager(@PathVariable("managerId") Long id){
+        managerService.deleteManager(id);
     }
 }
