@@ -19,6 +19,11 @@ public class Customer extends User{
     Long customerId;
 
     double account_balance;
+    public Customer(Long customerId, String username, String phoneNumber, String email, String address,double account_balance){
+        super(username,phoneNumber,email,address);
+        this.account_balance = account_balance;
+        this.customerId = customerId;
+    }
     public Customer(String username, String phoneNumber, String email, String address,double account_balance){
         super(username,phoneNumber,email,address);
         this.account_balance = account_balance;
@@ -27,10 +32,12 @@ public class Customer extends User{
     public Customer(){
 
     }
+
     @Override
     public String toString() {
         return "Customer{" +
-                "account_balance=" + account_balance +
+                "customerId=" + customerId +
+                ", account_balance=" + account_balance +
                 '}';
     }
 
@@ -40,5 +47,13 @@ public class Customer extends User{
 
     public void setAccount_balance(double account_balance) {
         this.account_balance = account_balance;
+    }
+
+    public Long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 }
