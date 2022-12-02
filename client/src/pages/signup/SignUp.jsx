@@ -16,6 +16,7 @@ function SignUp() {
     const [email,setEmail] = useState("");
     const [no,setNo] = useState("");
     const [address,setAddress] = useState("");
+    const [response,setResponse] = useState();
     function handleName(e){
         setName(e.target.value);
     }
@@ -44,6 +45,7 @@ function SignUp() {
                 "phoneNumber": no,
                 "email": email,
                 "address": address,
+                "password": password,
                 "account_balance": 1000.0
             
                
@@ -51,8 +53,15 @@ function SignUp() {
         };
         fetch("http://localhost:8080/api/v1/customer",requestOptions)
         .then(response => {return response.json()})
-        .then(data => console.log(data))
-        
+        .then(data => {
+            console.log(data)   
+            setResponse(data);
+            console.log(response);
+        });
+        const arr = document.getElementsByTagName("input")    
+        for(let i=0;i<arr.length;i++){
+            arr[i].value = ""
+        }
       
     }
     return (
@@ -61,7 +70,7 @@ function SignUp() {
         <div class="login-left">
             <div class="login-header">
                 <h1>Welcome to SmartMart</h1>
-                <p>Please login to use the platform</p>
+                <p>Please Register to use the platform</p>
             </div>
             <form class="login-form" autocomplete="off" onSubmit={handleClick}>
                 <div class="login-form-content">
@@ -85,7 +94,7 @@ function SignUp() {
                         <label for="passwordForm">Enter Address</label>
                         <input type="text" id="passwordForm" onChange={handleAddress}/>
                     </div>
-                    <button className="signup__button" >Sign Up</button>
+                    <button className="signup__button" type="submit">Sign Up</button>
                 </div>
                 <div>
                     <p>Already registered?       

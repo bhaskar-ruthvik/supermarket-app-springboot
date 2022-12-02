@@ -20,8 +20,8 @@ public class Manager extends User {
                     generator = "manager_sequence"
             )
     Long managerId;
-    public Manager(String username, String phoneNumber, String email, String address){
-        super(username,phoneNumber,email,address);
+    public Manager(String username, String phoneNumber, String email, String address,String password){
+        super(username,phoneNumber,email,address,password);
 
     }
     public Manager(){

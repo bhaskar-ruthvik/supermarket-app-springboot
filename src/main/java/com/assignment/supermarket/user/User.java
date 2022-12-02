@@ -11,6 +11,15 @@ public class User {
     private String phoneNumber;
     private String email;
     private String address;
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getUsername() {
         return username;
@@ -24,11 +33,12 @@ public class User {
 //        return userID;
 //    }
 
-    public User(String username, String phoneNumber, String email, String address) {
+    public User(String username, String phoneNumber, String email, String address,String password) {
         this.username = username;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
+        this.password= password;
     }
     public User(){
 
@@ -73,10 +83,10 @@ public class User {
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
-//                ", userID=" + userID +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }
