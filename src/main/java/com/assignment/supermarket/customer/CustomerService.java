@@ -17,23 +17,25 @@ public class CustomerService {
     public List<Customer> getCustomers(){
         return customerRepository.findAll();
     }
-    public void addNewCustomer(Customer customer){
+    public Integer addNewCustomer(Customer customer){
         Optional<Customer> customerByEmail = customerRepository.findCustomerByEmail(customer.getEmail());
         boolean hasMinimumBalance = CustomerRepository.checkAccountBalance(customer.getAccount_balance());
         if(customerByEmail.isPresent()){
-            throw new IllegalStateException("Email already taken");
+            return 100;
         }
         if(!hasMinimumBalance){
-            throw new IllegalStateException("Not enough Account Balance please add more to your account!");
+            return 101;
         }
         customerRepository.save(customer);
+        return 1;
     }
-    public void deleteCustomer(Long id){
+    public Integer deleteCustomer(Long id){
         boolean existsById = customerRepository.existsById(id);
 
         if(!existsById){
-            throw new IllegalStateException("User never existed in the first place!");
+            return 0;
         }
         customerRepository.deleteById(id);
+        return 1;
     }
 }

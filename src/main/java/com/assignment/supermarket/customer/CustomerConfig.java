@@ -15,6 +15,7 @@ public class CustomerConfig {
                   "9912762200",
                   "sparksteam123@gmail.com",
                   "334ofiojgf",
+                  "fkkffkbbk",
                   1000);
 
             customerRepository.saveAll(List.of(bhaskar));

@@ -19,13 +19,13 @@ public class Customer extends User{
     Long customerId;
 
     double account_balance;
-    public Customer(Long customerId, String username, String phoneNumber, String email, String address,double account_balance){
-        super(username,phoneNumber,email,address);
+    public Customer(Long customerId, String username, String phoneNumber, String email, String address,String password,double account_balance){
+        super(username,phoneNumber,email,address,password);
         this.account_balance = account_balance;
         this.customerId = customerId;
     }
-    public Customer(String username, String phoneNumber, String email, String address,double account_balance){
-        super(username,phoneNumber,email,address);
+    public Customer(String username, String phoneNumber, String email, String address,String password,double account_balance){
+        super(username,phoneNumber,email,address,password);
         this.account_balance = account_balance;
 
     }
