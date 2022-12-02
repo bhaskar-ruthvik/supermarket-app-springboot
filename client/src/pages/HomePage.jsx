@@ -9,7 +9,6 @@ import Footer from '../components/Footer';
 import FooterMenu from '../components/FooterMenu';
 import { displayOnDesktop } from '../themes/commonStyles';
 import MobileFooter from '../components/MobileFooter';
-;
 
 function HomePage() {
     return (

@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom';
 
 // mui icons
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
@@ -100,7 +101,7 @@ const CarouselCard = ({ location }) => {
           }
         />
       </Box>
-
+      <Link to="/item">
       <Box sx={flexBetween}>
         <Box sx={{ mt: 2 }}>
           <Typography component="h3"> {location.location}</Typography>
@@ -123,6 +124,7 @@ const CarouselCard = ({ location }) => {
           </Box>
         </Box>
       </Box>
+      </Link>
     </Box>
   );
 };
