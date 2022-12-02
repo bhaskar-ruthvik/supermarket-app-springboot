@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './signup.css'
 import {Link} from 'react-router-dom';
+import SplitButton from 'components/SplitButton';
 
 function SignUp() {
     useEffect(()=>{
@@ -74,6 +75,9 @@ function SignUp() {
             </div>
             <form class="login-form" autocomplete="off" onSubmit={handleClick}>
                 <div class="login-form-content">
+                <div>
+                <SplitButton></SplitButton>
+                </div>
                     <div class="form-item">
                         <label for="passwordForm">Enter Name</label>
                         <input type="text" id="passwordForm" onChange={handleName}/>
@@ -95,7 +99,8 @@ function SignUp() {
                         <input type="text" id="passwordForm" onChange={handleAddress}/>
                     </div>
                     <button className="signup__button" type="submit">Sign Up</button>
-                </div>
+                    
+                    </div>
                 <div>
                     <p>Already registered?       
                     <Link to="/signin">    Sign In</Link>
