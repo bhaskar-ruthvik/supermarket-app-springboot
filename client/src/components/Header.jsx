@@ -6,7 +6,7 @@ import ItemSearch from './ItemSearch';
 import { flexBetweenCenter,dFlex, displayOnDesktop } from '../themes/commonStyles';
 import ProfileSettings from './ProfileSettings';
 import MobileSearch from './MobileSearch';
-
+import {Link} from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -25,7 +25,7 @@ const Header = () => {
         }}
         >
         <Box sx={displayOnDesktop}>
-        <Logo/>
+        <Link to="/"><Logo/></Link>
         </Box>
         <Box sx={displayOnDesktop}>
         {' '}

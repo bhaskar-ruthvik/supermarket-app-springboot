@@ -67,6 +67,15 @@ export const flexBetween = {
     display: 'block',
     overflow: 'hidden',
     width: '100%',
-    paddingLeft: '2px',
     borderRadius: 3,
   };
+
+  export const adImage = {
+    height: 450,
+    display: 'block',
+    overflow: 'hidden',
+    width: '100%',
+    borderRadius: 3,
+   
+
+  }

@@ -3,6 +3,7 @@ import HomePage from "pages/HomePage";
 import Item from "pages/Item";
 import SignIn from "pages/signup/SignIn";
 import SignUp from "pages/signup/SignUp";
+import MainPage from "pages/MainPage"
 import React from "react";
 import Admin from "pages/Admin";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -12,7 +13,8 @@ function App() {
   return(
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage/>} />
+        <Route path="/" element={<MainPage/>} />
+        <Route path="/home" element={<HomePage/>} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/signin" element={<SignIn/>} />
         <Route path="/cart" element={<Cart/>} />
