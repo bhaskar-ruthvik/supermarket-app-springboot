@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
@@ -11,11 +11,13 @@ import { flexCenter } from '../themes/commonStyles';
 import {Link} from 'react-router-dom'
 
 const ProfileSettings = () => {
-  let isSignedin = window.localStorage.getItem("signin")
-  console.log(isSignedin)
+
+  const[signIn,setSignIn] = useState(window.localStorage.getItem("signin"));
+
+  
   return (
     <Box sx={flexCenter}>
-    {isSignedin ? <Link to="/signup/customer"> Become A User</Link>: <div></div>}
+    {signIn ? <Link to="/signout">Sign Out</Link>: <Link to="/signup/customer"> Become A User</Link>}
     <Stack>
     
         <Link to="/cart"><Button>

@@ -12,7 +12,7 @@ import React,{useEffect} from "react";
 import Admin from "pages/Admin";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from "components/Header";
-
+import SignOut from "pages/signup/SignOut";
 function App() {
 
  
@@ -27,6 +27,7 @@ function App() {
         <Route path="/signin/customer" element={<SignIn/>} />
         <Route path="/signin/manager" element={<SignInManager/>} />
         <Route path="/signin/admin" element={<SignInAdmin/>} />
+        <Route path="/signout" element={<SignOut/>} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/admin" element={<Admin/>} />
         <Route path="/item" element={<div><Header></Header><Item></Item></div>} />
