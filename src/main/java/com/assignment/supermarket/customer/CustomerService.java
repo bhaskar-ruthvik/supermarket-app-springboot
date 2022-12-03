@@ -17,17 +17,30 @@ public class CustomerService {
     public List<Customer> getCustomers(){
         return customerRepository.findAll();
     }
-    public Integer addNewCustomer(Customer customer){
+    public Long addNewCustomer(Customer customer){
         Optional<Customer> customerByEmail = customerRepository.findCustomerByEmail(customer.getEmail());
         boolean hasMinimumBalance = CustomerRepository.checkAccountBalance(customer.getAccount_balance());
         if(customerByEmail.isPresent()){
-            return 100;
+            return -1L;
         }
         if(!hasMinimumBalance){
-            return 101;
+            return -2L;
         }
         customerRepository.save(customer);
-        return 1;
+        return customer.getUserID();
+    }
+    public boolean findCustomer(CustomerSignIn customerSignIn){
+
+        Optional<Customer> customerById = customerRepository.findById(customerSignIn.getId());
+
+        if(customerById.isPresent()){
+           return customerSignIn.getPassword().equals(customerById.get().getPassword());
+        }
+        if(!customerById.isPresent()){
+            return false;
+        }
+        return false;
+
     }
     public Integer deleteCustomer(Long id){
         boolean existsById = customerRepository.existsById(id);

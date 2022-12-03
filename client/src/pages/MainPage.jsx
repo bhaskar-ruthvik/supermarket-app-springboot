@@ -13,6 +13,7 @@ import MobileFooter from '../components/MobileFooter';
 ;
 
 function MainPage() {
+  
     return (
         <React.Fragment>
       <CssBaseline/>

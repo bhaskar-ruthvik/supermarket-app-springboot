@@ -160,3 +160,6 @@ input[type=checkbox] {
     display: none;
   }
 }
+.success{
+  color : green
+}

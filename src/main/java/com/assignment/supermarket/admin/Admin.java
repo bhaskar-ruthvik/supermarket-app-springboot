@@ -8,17 +8,16 @@ import javax.persistence.*;
 @Entity
 @Table
 public class Admin extends User {
-    @Id
-    @SequenceGenerator(
-            name = "admin_sequence",
-            sequenceName = "admin_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "admin_sequence"
-    )
-    Long adminId;
+//    @SequenceGenerator(
+//            name = "admin_sequence",
+//            sequenceName = "admin_sequence",
+//            allocationSize = 1
+//    )
+//    @GeneratedValue(
+//            strategy = GenerationType.SEQUENCE,
+//            generator = "admin_sequence"
+//    )
+//    Long adminId;
     public Admin(){
 
     }
@@ -26,11 +25,11 @@ public class Admin extends User {
         super(username,phoneNumber,email,address,password);
     }
 
-    public Long getAdminId() {
-        return adminId;
-    }
-
-    public void setAdminId(Long adminId) {
-        this.adminId = adminId;
-    }
+//    public Long getAdminId() {
+//        return adminId;
+//    }
+//
+//    public void setAdminId(Long adminId) {
+//        this.adminId = adminId;
+//    }
 }

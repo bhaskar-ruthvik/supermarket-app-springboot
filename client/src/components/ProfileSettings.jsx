@@ -11,10 +11,13 @@ import { flexCenter } from '../themes/commonStyles';
 import {Link} from 'react-router-dom'
 
 const ProfileSettings = () => {
+  let isSignedin = window.localStorage.getItem("signin")
+  console.log(isSignedin)
   return (
     <Box sx={flexCenter}>
-    <Link to="/signup"> Become A User</Link>
+    {isSignedin ? <Link to="/signup/customer"> Become A User</Link>: <div></div>}
     <Stack>
+    
         <Link to="/cart"><Button>
             <IoCartOutline size={24} />
         </Button>

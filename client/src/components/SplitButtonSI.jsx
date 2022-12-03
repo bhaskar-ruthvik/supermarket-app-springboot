@@ -43,7 +43,7 @@ export default function SplitButton(props) {
 
   return (
     <React.Fragment>
-    <label class="acclabel" for="passwordForm">Choose Account Type</label>
+    <label class="acclabel" for="passwordForm">Log in as</label>
       <ButtonGroup style={{width:'150px'}} variant="contained" ref={anchorRef} aria-label="split button">
         <Button onClick={handleClick}>{options[selectedIndex]}</Button>
         <Button
@@ -86,7 +86,7 @@ export default function SplitButton(props) {
                         handleMenuItemClick(event, index)
                         
                       } }
-                    ><Link to={"/signup/"+option} >
+                    ><Link to={"/signin/"+option} >
                                 {option}
                     </Link>
                       
@@ -98,7 +98,7 @@ export default function SplitButton(props) {
           </Grow>
         )}
       </Popper>
-      {selectedIndex == 0 && <div><label class="acclabel1" for="passwordForm">Choose Account balance</label><DiscreteSlider onChange={props.onChange}></DiscreteSlider></div>}
+      {/* {selectedIndex == 0 && <div><label class="acclabel1" for="passwordForm">Choose Account balance</label><DiscreteSlider onChange={props.onChange}></DiscreteSlider></div>} */}
       
     </React.Fragment>
   );

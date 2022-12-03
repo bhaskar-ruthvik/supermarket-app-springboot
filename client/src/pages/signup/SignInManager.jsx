@@ -3,7 +3,7 @@ import './signup.css';
 import {Link,RedirectFunction} from 'react-router-dom';
 import SplitButtonSI from 'components/SplitButtonSI'
 import sign from './signIn.svg'
-function SignIn() {
+function SignInManager() {
    
     const [id,setId] = useState(-1)
     const [password,setPassword] = useState("")
@@ -22,7 +22,7 @@ function handleClick(e){
                
             })
         };
-        fetch("http://localhost:8080/api/v1/customer/signin",requestOptions)
+        fetch("http://localhost:8080/api/v1/manager/signin",requestOptions)
         .then(response => {return response.json()})
         .then(data => {
             console.log(data)   
@@ -51,7 +51,7 @@ function handlePassword(e){
             <form class="login-form" autocomplete="off" onSubmit={handleClick}>
                 <div class="login-form-content">
                 <div>
-                <SplitButtonSI index={0}></SplitButtonSI>
+                <SplitButtonSI index={1}></SplitButtonSI>
                 </div>
                     <div class="form-item">
                         <label for="emailForm">Enter User Id</label>
@@ -85,4 +85,4 @@ function handlePassword(e){
     );
 }
 
-export default SignIn
+export default SignInManager

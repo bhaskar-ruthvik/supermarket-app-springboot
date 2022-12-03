@@ -6,10 +6,13 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-export default function DiscreteSlider() {
+
+export default function DiscreteSlider(props) {
   return (
     <Box sx={{ width: 300, marginTop: 1 }}>
-      <Slider
+ 
+   <Slider
+        onChange={props.onChange}
         aria-label="Temperature"
         defaultValue={5000}
         getAriaValueText={valuetext}
@@ -18,6 +21,7 @@ export default function DiscreteSlider() {
         min={1000}
         max={10000}
       />
+
     </Box>
   );
 }

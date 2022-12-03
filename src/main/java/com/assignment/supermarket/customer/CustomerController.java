@@ -20,9 +20,12 @@ public class CustomerController {
     public List<Customer> getCustomers(){
         return customerService.getCustomers();
     }
-
+    @PostMapping(path="/signin")
+    public boolean findCustomer(@RequestBody CustomerSignIn customerSignIn){
+        return customerService.findCustomer(customerSignIn);
+    }
     @PostMapping
-    public Integer registerNewCustomer(@RequestBody Customer customer){
+    public Long registerNewCustomer(@RequestBody Customer customer){
 
         return customerService.addNewCustomer(customer);
 

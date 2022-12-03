@@ -3,7 +3,7 @@ import './signup.css'
 import {Link} from 'react-router-dom';
 import SplitButton from 'components/SplitButton';
 import signUp from './signUp.svg'
-function SignUp() {
+function SignUpManager() {
     // useEffect(()=>{
     //     fetch("http://localhost:8080/api/v1/customer")
     //     .then(response =>{
@@ -18,10 +18,10 @@ function SignUp() {
     const [no,setNo] = useState("");
     const [address,setAddress] = useState("");
     const [response,setResponse] = useState(-10);
-    const [balance,setBalance] = useState(5000)
-  function handleChange(event){
-    setBalance(event.target.value)
-  }
+//     const [balance,setBalance] = useState(5000)
+//   function handleChange(event){
+//     setBalance(event.target.value)
+//   }
     function handleName(e){
         setName(e.target.value);
     }
@@ -51,7 +51,7 @@ function SignUp() {
                 "email": email,
                 "address": address,
                 "password": password,
-                "account_balance": balance
+           
             
                
             })
@@ -80,7 +80,7 @@ function SignUp() {
             <form class="login-form" autocomplete="off" onSubmit={handleClick}>
                 <div class="login-form-content">
                 <div>
-                <SplitButton onChange={handleChange} index={0}></SplitButton>
+                <SplitButton index={1}></SplitButton>
                 </div>
                     <div class="form-item">
                         <label for="passwordForm">Enter Name</label>
@@ -108,7 +108,7 @@ function SignUp() {
                 <div>
                 {response>-1 && <div><p className='success'>Signed up successfully!</p><p>Your user ID is {response}</p></div>}
                     <p>Already registered?       
-                    <Link to="/signin/customer">    Sign In</Link>
+                    <Link to="/signin">    Sign In</Link>
                     </p>
                 </div>
                 {/* <div class="login-form-footer">
@@ -128,4 +128,4 @@ function SignUp() {
     );
 }
 
-export default SignUp
+export default SignUpManager

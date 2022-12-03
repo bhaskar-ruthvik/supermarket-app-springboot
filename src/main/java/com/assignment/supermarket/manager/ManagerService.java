@@ -17,12 +17,26 @@ public class ManagerService {
     public List<Manager> getManagers(){
         return managerRepository.findAll();
     }
-    public void addNewManager(Manager manager){
+    public Long addNewManager(Manager manager){
         Optional<Manager> managerByEmail = managerRepository.findManagerByEmail(manager.getEmail());
         if(managerByEmail.isPresent()){
-            throw new IllegalStateException("Email already taken");
+            return -1L;
         }
         managerRepository.save(manager);
+        return manager.getUserID();
+    }
+    public boolean findManager(ManagerSignIn managerSignIn){
+
+        Optional<Manager> managerById = managerRepository.findById(managerSignIn.getId());
+
+        if(managerById.isPresent()){
+            return managerSignIn.getPassword().equals(managerById.get().getPassword());
+        }
+        if(!managerById.isPresent()){
+            return false;
+        }
+        return false;
+
     }
     public void deleteManager(Long id){
         boolean existsById = managerRepository.existsById(id);

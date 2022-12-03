@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/manager")
+@CrossOrigin
 public class ManagerController {
     private final ManagerService managerService;
 
@@ -20,13 +21,19 @@ public class ManagerController {
     public List<Manager> getManagers(){
         return managerService.getManagers();
     }
-    @PostMapping
-    public void registerNewManager(@RequestBody Manager manager){
-
-        managerService.addNewManager(manager);
+    @PostMapping(path="/signin")
+    public boolean findManager(@RequestBody ManagerSignIn managerSignIn){
+        return managerService.findManager(managerSignIn);
     }
-    @DeleteMapping(path = "{managerId}")
-    public void deleteManager(@PathVariable("managerId") Long id){
+    @PostMapping
+    public Long registerNewManager(@RequestBody Manager manager){
+
+        return managerService.addNewManager(manager);
+    }
+//    @GetMapping(path="{userId}")
+
+    @DeleteMapping(path = "{userId}")
+    public void deleteManager(@PathVariable("userId") Long id){
         managerService.deleteManager(id);
     }
 }

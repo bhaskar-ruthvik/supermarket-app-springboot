@@ -6,28 +6,31 @@ import javax.persistence.*;
 @Entity
 @Table
 public class Customer extends User{
-    @Id
-    @SequenceGenerator(
-            name = "customer_sequence",
-            sequenceName = "customer_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "customer_sequence"
-    )
-    Long customerId;
+
+//    @SequenceGenerator(
+//            name = "customer_sequence",
+//            sequenceName = "customer_sequence",
+//            allocationSize = 1
+//    )
+//    @GeneratedValue(
+//            strategy = GenerationType.IDENTITY,
+//            generator = "customer_sequence"
+//    )
+//    String customerId;
 
     double account_balance;
-    public Customer(Long customerId, String username, String phoneNumber, String email, String address,String password,double account_balance){
-        super(username,phoneNumber,email,address,password);
-        this.account_balance = account_balance;
-        this.customerId = customerId;
-    }
+//    public Customer(String customerId, String username, String phoneNumber, String email, String address,String password,double account_balance){
+//        super(username,phoneNumber,email,address,password);
+//        this.account_balance = account_balance;
+//        this.customerId = customerId;
+//    }
     public Customer(String username, String phoneNumber, String email, String address,String password,double account_balance){
         super(username,phoneNumber,email,address,password);
         this.account_balance = account_balance;
 
+    }
+    public Customer(Long userId, String password){
+        super(userId,password);
     }
     public Customer(){
 
@@ -36,7 +39,7 @@ public class Customer extends User{
     @Override
     public String toString() {
         return "Customer{" +
-                "customerId=" + customerId +
+//                "customerId=" + customerId +
                 ", account_balance=" + account_balance +
                 '}';
     }
@@ -47,13 +50,13 @@ public class Customer extends User{
 
     public void setAccount_balance(double account_balance) {
         this.account_balance = account_balance;
-    }
+    }}
 
-    public Long getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
-}
+//    public String getCustomerId() {
+//        return customerId;
+//    }
+//
+//    public void setCustomerId(String customerId) {
+//        this.customerId = customerId;
+//    }
+//}

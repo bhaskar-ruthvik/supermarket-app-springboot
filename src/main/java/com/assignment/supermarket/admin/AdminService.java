@@ -18,12 +18,26 @@ public class AdminService {
 
         return adminRepository.findAll();
     }
-    public void addNewAdmin(Admin admin){
+    public Long addNewAdmin(Admin admin){
         Optional<Admin> adminByEmail = adminRepository.findAdminByEmail(admin.getEmail());
         if(adminByEmail.isPresent()){
-            throw new IllegalStateException("Email already taken");
+            return -1L;
         }
         adminRepository.save(admin);
+        return admin.getUserID();
+    }
+    public boolean findAdmin(AdminSignIn adminSignIn){
+
+        Optional<Admin> adminById = adminRepository.findById(adminSignIn.getId());
+
+        if(adminById.isPresent()){
+            return adminSignIn.getPassword().equals(adminById.get().getPassword());
+        }
+        if(!adminById.isPresent()){
+            return false;
+        }
+        return false;
+
     }
     public void deleteAdmin(Long id){
         boolean existsById = adminRepository.existsById(id);

@@ -1,10 +1,10 @@
 import React,{useState} from 'react';
 import './signup.css';
-import {Link,RedirectFunction} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import SplitButtonSI from 'components/SplitButtonSI'
 import sign from './signIn.svg'
-function SignIn() {
-   
+function SignInAdmin() {
+  
     const [id,setId] = useState(-1)
     const [password,setPassword] = useState("")
     const [response,setResponse] = useState("-2")
@@ -22,7 +22,7 @@ function handleClick(e){
                
             })
         };
-        fetch("http://localhost:8080/api/v1/customer/signin",requestOptions)
+        fetch("http://localhost:8080/api/v1/admin/signin",requestOptions)
         .then(response => {return response.json()})
         .then(data => {
             console.log(data)   
@@ -48,18 +48,18 @@ function handlePassword(e){
                 <h1>Welcome to SmartMart</h1>
                 <p>Please login to use the platform</p>
             </div>
-            <form class="login-form" autocomplete="off" onSubmit={handleClick}>
+            <form class="login-form" autocomplete="off">
                 <div class="login-form-content">
                 <div>
-                <SplitButtonSI index={0}></SplitButtonSI>
+                <SplitButtonSI index={2}></SplitButtonSI>
                 </div>
                     <div class="form-item">
                         <label for="emailForm">Enter User Id</label>
-                        <input type="text" id="emailForm" onChange={handleId}/>
+                        <input type="text" id="emailForm"/>
                     </div>
                     <div class="form-item">
                         <label for="passwordForm">Enter Password</label>
-                        <input type="password" id="passwordForm" onChange={handlePassword}/>
+                        <input type="password" id="passwordForm"/>
                     </div>
                     <a href=""><p>Forgot Password?</p></a>
                     <div class="form-item">
@@ -70,7 +70,7 @@ function handlePassword(e){
                     </div>
                     <div>
                     <p>Don't have an account?
-                    <Link to="/signup/customer">    Sign Up</Link>
+                    <Link to="/signup">    Sign Up</Link>
                     </p>
                 </div>
                     <button className="signup__button" type="submit">Sign In</button>
@@ -85,4 +85,4 @@ function handlePassword(e){
     );
 }
 
-export default SignIn
+export default SignInAdmin
