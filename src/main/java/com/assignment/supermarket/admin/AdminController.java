@@ -30,8 +30,12 @@ public class AdminController {
 
         return adminService.addNewAdmin(admin);
     }
+    @PutMapping(path="{adminId}")
+    public Integer updateAdmin(@PathVariable("adminId")Long id,@RequestParam String password){
+        return adminService.updateAdmin(id,password);
+    }
     @DeleteMapping(path = "{adminId}")
-    public void deleteAdmin(@PathVariable("adminId") Long id){
-        adminService.deleteAdmin(id);
+    public Integer deleteAdmin(@PathVariable("adminId") Long id){
+       return adminService.deleteAdmin(id);
     }
 }

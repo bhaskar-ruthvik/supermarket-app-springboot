@@ -3,6 +3,7 @@ package com.assignment.supermarket.customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,6 +42,15 @@ public class CustomerService {
         }
         return false;
 
+    }
+    @Transactional
+    public Integer updateCustomer(Long id, String password){
+            if(customerRepository.findById(id).isPresent()){
+                Customer customer = customerRepository.findById(id).get();
+                customer.setPassword(password);
+                return 1;
+            }
+            return 0;
     }
     public Integer deleteCustomer(Long id){
         boolean existsById = customerRepository.existsById(id);

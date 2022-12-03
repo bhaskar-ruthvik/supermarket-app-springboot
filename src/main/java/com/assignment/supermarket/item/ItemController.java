@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/admin")
+@RequestMapping(path = "api/v1/item")
+@CrossOrigin
 public class ItemController {
 
     private final ItemService itemservice;

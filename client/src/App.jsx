@@ -13,6 +13,9 @@ import Admin from "pages/Admin";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from "components/Header";
 import SignOut from "pages/signup/SignOut";
+import ForgotPassword from "pages/signup/ForgotPassword"
+import ForgotPasswordManager from "pages/signup/ForgotPasswordManager";
+import ForgotPasswordAdmin from "pages/signup/ForgotPasswordAdmin";
 function App() {
 
  
@@ -27,6 +30,9 @@ function App() {
         <Route path="/signin/customer" element={<SignIn/>} />
         <Route path="/signin/manager" element={<SignInManager/>} />
         <Route path="/signin/admin" element={<SignInAdmin/>} />
+        <Route path="/forgotpassword/customer" element={<ForgotPassword/>} />
+        <Route path="/forgotpassword/manager" element={<ForgotPasswordManager/>} />
+        <Route path="/forgotpassword/admin" element={<ForgotPasswordAdmin/>} />
         <Route path="/signout" element={<SignOut/>} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/admin" element={<Admin/>} />

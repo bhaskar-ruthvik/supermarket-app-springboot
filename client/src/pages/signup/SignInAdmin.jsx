@@ -61,7 +61,7 @@ function handlePassword(e){
                         <label for="passwordForm">Enter Password</label>
                         <input type="password" id="passwordForm"/>
                     </div>
-                    <a href=""><p>Forgot Password?</p></a>
+                    <Link to="/forgotpassword/admin">Forgot Password?</Link>
                     <div class="form-item">
                         <div class="checkbox">
                             <input type="checkbox" id="rememberMeCheckbox" checked/>

@@ -3,6 +3,7 @@ package com.assignment.supermarket.manager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,11 +39,22 @@ public class ManagerService {
         return false;
 
     }
-    public void deleteManager(Long id){
+    @Transactional
+    public Integer updateManager(Long id, String password){
+        if(managerRepository.findById(id).isPresent()){
+            Manager manager = managerRepository.findById(id).get();
+            manager.setPassword(password);
+            return 1;
+        }
+        return 0;
+    }
+    public Integer deleteManager(Long id){
         boolean existsById = managerRepository.existsById(id);
+
         if(!existsById){
-            throw new IllegalStateException("User never existed in the first place!");
+            return 0;
         }
         managerRepository.deleteById(id);
+        return 1;
     }
 }

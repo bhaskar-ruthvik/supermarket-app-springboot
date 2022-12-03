@@ -30,10 +30,14 @@ public class ManagerController {
 
         return managerService.addNewManager(manager);
     }
+    @PutMapping(path="{managerId}")
+    public Integer updateManager(@PathVariable("managerId")Long id,@RequestParam String password){
+        return managerService.updateManager(id,password);
+    }
 //    @GetMapping(path="{userId}")
 
     @DeleteMapping(path = "{userId}")
-    public void deleteManager(@PathVariable("userId") Long id){
-        managerService.deleteManager(id);
+    public Integer deleteManager(@PathVariable("userId") Long id){
+       return managerService.deleteManager(id);
     }
 }

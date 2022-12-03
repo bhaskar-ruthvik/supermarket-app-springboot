@@ -1,10 +1,10 @@
 package com.assignment.supermarket.item;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import java.time.LocalDate;
+
+@Entity
+@Table
 
 public class Item {
 
@@ -18,58 +18,40 @@ public class Item {
             strategy = GenerationType.SEQUENCE,
             generator = "item_sequence"
     )
-    private Long id;
-    private String name;
-    private Boolean isNew;
+    private Long item_code;
+    private String item_name;
+//    private List<ItemImage> ie;
+//
+//
+//
+//    public List<ItemImage> getIe() {
+//        return ie;
+//    }
+//
+//    public void setIe(List<ItemImage> ie) {
+//        this.ie = ie;
+//    }
+
+    private Integer quantity;
     private Double rating;
-    private LocalDate date;
+    private LocalDate deliveryDate;
     private String price;
 
     public Item() {
     }
 
-    public Item(Long id, String name, Boolean isNew, Double rating, LocalDate date, String price) {
-        this.id = id;
-        this.name = name;
-        this.isNew = isNew;
-        this.rating = rating;
-        this.date = date;
-        this.price = price;
+    public Long getItem_code() {
+        return item_code;
     }
 
-    public Item(String name, Boolean isNew, Double rating, LocalDate date, String price) {
-
-        this.name = name;
-        this.isNew = isNew;
-        this.rating = rating;
-        this.date = date;
-        this.price = price;
-
+    public void setItem_code(Long item_code) {
+        this.item_code = item_code;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public Boolean getNew() {
-        return isNew;
-    }
-
-    public void setNew(Boolean aNew) {
-        isNew = aNew;
-    }
 
     public Double getRating() {
         return rating;
@@ -79,13 +61,7 @@ public class Item {
         this.rating = rating;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
 
     public String getPrice() {
         return price;
@@ -95,15 +71,46 @@ public class Item {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", isNew=" + isNew +
-                ", rating=" + rating +
-                ", date=" + date +
-                ", price=" + price +
-                '}';
+    public Item(Long item_code, String item_name, Integer quantity, Double rating, LocalDate deliveryDate, String price) {
+        this.item_code = item_code;
+        this.item_name = item_name;
+
+        this.quantity = quantity;
+        this.rating = rating;
+        this.deliveryDate = deliveryDate;
+        this.price = price;
+    }
+
+    public Item(String item_name, Integer quantity, Double rating, LocalDate deliveryDate, String price) {
+        this.item_name = item_name;
+
+        this.quantity = quantity;
+        this.rating = rating;
+        this.deliveryDate = deliveryDate;
+        this.price = price;
+    }
+
+    public String getItem_name() {
+        return item_name;
+    }
+
+    public void setItem_name(String item_name) {
+        this.item_name = item_name;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public LocalDate getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(LocalDate deliveryDate) {
+        this.deliveryDate = deliveryDate;
     }
 }

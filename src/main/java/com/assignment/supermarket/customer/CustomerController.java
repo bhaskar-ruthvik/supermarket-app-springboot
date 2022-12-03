@@ -30,6 +30,10 @@ public class CustomerController {
         return customerService.addNewCustomer(customer);
 
     }
+    @PutMapping(path="{customerId}")
+    public Integer updateCustomer(@PathVariable("customerId")Long id,@RequestParam String password){
+        return customerService.updateCustomer(id,password);
+    }
     @DeleteMapping(path = "{customerId}")
     public Integer deleteCustomer(@PathVariable("customerId") Long id){
         return customerService.deleteCustomer(id);

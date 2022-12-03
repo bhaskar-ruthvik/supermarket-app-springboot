@@ -23,7 +23,7 @@ public class ItemService {
     }
 
     public void addNewItem(Item item) {
-        Optional<Item> ItemByID = itemRepository.findItemByID(item.getId());
+        Optional<Item> ItemByID = itemRepository.findItemByID(item.getItem_code());
         if(ItemByID.isPresent())
         {
             throw new IllegalStateException("Email already taken");

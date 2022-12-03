@@ -104,8 +104,8 @@ const CarouselCard = ({ location }) => {
       <Link to="/item">
       <Box sx={flexBetween}>
         <Box sx={{ mt: 2 }}>
-          <Typography component="h3"> {location.location}</Typography>
-          <Typography component="h4"> {location.days}</Typography>
+          <Typography component="h3"> {location.item_name}</Typography>
+          <Typography component="h4">Expected delivery: {location.deliveryDate}</Typography>
           <Typography component="h5"> {location.price}</Typography>
         </Box>
         <Box sx={{ mt: 2 }}>

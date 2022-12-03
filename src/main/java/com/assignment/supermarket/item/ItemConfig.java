@@ -17,7 +17,7 @@ public class ItemConfig {
             Item lays= new Item(
                     1L,
                     "Lay's Indian magic masala",
-                    true,
+                    20,
                     4.5,
                     LocalDate.of(2022, Month.DECEMBER, 20),
                     "Rs. 29"
@@ -26,7 +26,7 @@ public class ItemConfig {
             Item coke = new Item(
                     2L,
                     "Coca Cola",
-                    false,
+                    20,
                     4.99,
                     LocalDate.of(2022, Month.DECEMBER, 20),
                     "Rs. 39"
@@ -35,7 +35,7 @@ public class ItemConfig {
             Item oreo = new Item(
                     3L,
                     "Oreo Cookies n Cream",
-                    true,
+                    20,
                     4.6,
                     LocalDate.of(2022, Month.DECEMBER, 20),
                     "Rs.30"
@@ -44,7 +44,7 @@ public class ItemConfig {
             Item Haldirams = new Item(
                     4L,
                     "Haldiram's Aloo Bhujia",
-                    false,
+                    20,
                     4.2,
                     LocalDate.of(2022, Month.DECEMBER, 21),
                     "Rs.40"
@@ -53,7 +53,7 @@ public class ItemConfig {
             Item SunflowerOil = new Item(
                     5L,
                     "Fortune Refined Sunflower oil",
-                    true,
+                    20,
                     4.1,
                     LocalDate.of(2022, Month.DECEMBER, 21),
                     "Rs.176"
@@ -62,7 +62,7 @@ public class ItemConfig {
             Item rice = new Item(
                     6L,
                     "Sona Masoori Rice",
-                    false,
+                    20,
                     4.6,
                     LocalDate.of(2022, Month.DECEMBER, 21),
                     "Rs.1199"
@@ -71,7 +71,7 @@ public class ItemConfig {
             Item sugar = new Item(
                     7L,
                     "Sugar",
-                    true,
+                    20,
                     4.7,
                     LocalDate.of(2022, Month.DECEMBER, 21),
                     "Rs.37"
@@ -80,7 +80,7 @@ public class ItemConfig {
             Item atta = new Item(
                     8L,
                     "Aashirvaad Atta 5 kg",
-                    false,
+                    20,
                     4.8,
                     LocalDate.of(2022, Month.DECEMBER, 21),
                     "Rs.300"
@@ -89,7 +89,7 @@ public class ItemConfig {
             Item toothpaste = new Item(
                     9L,
                     "Colgate Charcoal Fresh Toothpaste",
-                    true,
+                    20,
                     4.5,
                     LocalDate.of(2022, Month.DECEMBER, 21),
                     "Rs.100"
@@ -98,7 +98,7 @@ public class ItemConfig {
             Item jam = new Item(
                     10L,
                     "Kissan Mixed fruit Jam, 700g",
-                    false,
+                    20,
                     4.3,
                     LocalDate.of(2022, Month.DECEMBER, 21),
                     "Rs.220"

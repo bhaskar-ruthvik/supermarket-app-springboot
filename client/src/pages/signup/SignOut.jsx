@@ -36,11 +36,11 @@ function SignOut() {
                         </div>
                     </div>
                     <div>  */}
-                    <p>Want to Login?
-                    <Link to="/signin/customer">    Sign In</Link>
+                    <p>You have signed out successfully!
+                    
                     </p>
                 </div>
-                    <button className="signup__button" type="submit">Sign In</button>
+                    <button className="signup__button" type="submit"><Link to="/signin/customer">Sign In</Link></button>
                 </div>
             </form>
         </div>
