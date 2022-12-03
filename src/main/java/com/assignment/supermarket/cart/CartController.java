@@ -31,7 +31,7 @@ public class CartController{
 
     }
 
-    @PutMapping(path = "{cartId")
+    @PutMapping(path = "{cartId}")
     public void updateCart(
       @PathVariable("cartId") Long cartId
     ){cartService.updateCart(cartId);}
