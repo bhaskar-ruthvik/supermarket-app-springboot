@@ -8,7 +8,8 @@ import ProfileSettings from './ProfileSettings';
 import MobileSearch from './MobileSearch';
 import {Link} from 'react-router-dom'
 
-const Header = () => {
+const Header = (props) => {
+ 
   return (
     <Box sx={{
         ...dFlex,
@@ -32,7 +33,7 @@ const Header = () => {
         <ItemSearch/>
         </Box>
         <Box sx={displayOnDesktop}>
-        <ProfileSettings/>
+        <ProfileSettings id={props.ind}/>
         </Box>
         <Box sx={{display: {xs: 'flex', md : 'none'}}}>
         <MobileSearch/>

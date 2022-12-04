@@ -34,9 +34,12 @@ public class ItemController {
     {
         itemservice.addNewItem(item);
     }
-
+    @PutMapping(path="{itemId}")
+    public Integer updateItem(@PathVariable("itemId")String id, @RequestParam(required = false) String name, @RequestParam(required = false)String deliveryDate, @RequestParam(required = false)String quantity,@RequestParam(required = false)String price,@RequestParam(required = false)String offer,@RequestParam(required = false)String rating){
+        return itemservice.updateItem(id,name,deliveryDate,quantity,price,offer,rating);
+    }
     @DeleteMapping(path = "{id}")
-    public void deleteItem(@PathVariable("id") Long id){
-        itemservice.deleteItem(id);
+    public Integer deleteItem(@PathVariable("id") Long id){
+        return itemservice.deleteItem(id);
     }
 }

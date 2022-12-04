@@ -3,6 +3,8 @@ package com.assignment.supermarket.item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,16 +39,54 @@ public class ItemService {
         }
         return null;
     }
+    @Transactional
+    public Integer updateItem(String idi, String name,String deliveryD,String quantitys,String prices,String offers,String ratings){
+        Long id = Long.parseLong(idi);
 
-    public void deleteItem(Long id) {
+
+
+
+
+        if(itemRepository.findById(id).isPresent()){
+            Item item = itemRepository.findById(id).get();
+
+            if(name!=null&& name.length()!=0){
+                item.setItem_name(name);
+            }
+            if(deliveryD!=null){
+                LocalDate date = LocalDate.parse(deliveryD);
+                item.setDeliveryDate(date);
+            }
+            if(quantitys!=null){
+                Integer quantity = Integer.parseInt(quantitys);
+                item.setQuantity(quantity);
+            }
+            if(prices!=null){
+                Double price = Double.parseDouble(prices);
+                item.setPrice(price);
+            }
+            if(offers!=null){
+                Double offer = Double.parseDouble(offers);
+                item.setOffer(offer);
+            }
+            if(ratings!=null){
+                Double rating = Double.parseDouble(ratings);
+                item.setRating(rating);
+            }
+
+            return 1;
+        }
+        return 0;
+    }
+
+    public Integer deleteItem(Long id) {
         itemRepository.findItemByID(id);
         boolean exists = itemRepository.existsById(id);
             if(!exists)
             {
-                throw new IllegalStateException(
-                        "item with id" + id + "does not exist"
-                );
+                return 0;
             }
         itemRepository.deleteById(id);
+            return 1;
     }
 }

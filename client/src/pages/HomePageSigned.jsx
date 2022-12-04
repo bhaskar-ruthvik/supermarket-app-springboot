@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Header from '../components/Header'
@@ -10,7 +10,13 @@ import FooterMenu from '../components/FooterMenu';
 import { displayOnDesktop } from '../themes/commonStyles';
 import MobileFooter from '../components/MobileFooter';
 
-function HomePage() {
+function HomePageSigned() {
+    useEffect(()=>{
+        
+    },[])
+    if(window.localStorage.getItem("signin")==false){
+        window.location.replace("http://localhost:3000/home")
+    } 
     return (
         <React.Fragment>
       <CssBaseline/>
@@ -20,7 +26,7 @@ function HomePage() {
         height: '100vh'
       }}>
         <Box>
-          <Header ind={0}/>
+          <Header ind={1}/>
           <OptionsTab />
           
         </Box>
@@ -47,4 +53,4 @@ function HomePage() {
     )
 }
 
-export default HomePage
+export default HomePageSigned

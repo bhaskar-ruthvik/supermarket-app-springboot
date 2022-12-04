@@ -17,7 +17,7 @@ useEffect(()=>{
   })
 },[])
 for(let i=0; i< backend.length;i++){
-    backend[i]["locationImages"] = cardLocations[i]["locationImages"]
+    backend[i]["locationImages"] = [{id:1,url:backend[i].url1},{id:2,url:backend[i].url2},{id:3,url:backend[i].url3},{id:4,url:backend[i].url4}]
 }
   const [cards] = useState(cardLocations);
   if (!cards.length) {
