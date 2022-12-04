@@ -56,7 +56,7 @@ function SignUpManager() {
                
             })
         };
-        fetch("http://localhost:8080/api/v1/customer",requestOptions)
+        fetch("http://localhost:8080/api/v1/manager",requestOptions)
         .then(response => {return response.json()})
         .then(data => {
             console.log(data)   
@@ -108,7 +108,7 @@ function SignUpManager() {
                 <div>
                 {response>-1 && <div><p className='success'>Signed up successfully!</p><p>Your user ID is {response}</p></div>}
                     <p>Already registered?       
-                    <Link to="/signin">    Sign In</Link>
+                    <Link to="/signin/manager">    Sign In</Link>
                     </p>
                 </div>
                 {/* <div class="login-form-footer">

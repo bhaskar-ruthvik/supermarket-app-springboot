@@ -108,7 +108,7 @@ function SignUpAdmin() {
                 <div>
                 {response>-1 && <div><p className='success'>Signed up successfully!</p><p>Your user ID is {response}</p></div>}
                     <p>Already registered?       
-                    <Link to="/signin">    Sign In</Link>
+                    <Link to="/signin/admin">    Sign In</Link>
                     </p>
                 </div>
                 {/* <div class="login-form-footer">

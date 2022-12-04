@@ -30,7 +30,7 @@ function handleClick(e){
             window.localStorage.setItem("signin", data)
             if(data){
                 
-                window.location.replace("http://localhost:3000/home")
+                window.location.replace("http://localhost:3000/admin")
             }
         });
 }
@@ -48,18 +48,18 @@ function handlePassword(e){
                 <h1>Welcome to SmartMart</h1>
                 <p>Please login to use the platform</p>
             </div>
-            <form class="login-form" autocomplete="off">
+            <form class="login-form" autocomplete="off" onSubmit={handleClick}>
                 <div class="login-form-content">
                 <div>
                 <SplitButtonSI index={2}></SplitButtonSI>
                 </div>
                     <div class="form-item">
                         <label for="emailForm">Enter User Id</label>
-                        <input type="text" id="emailForm"/>
+                        <input type="text" id="emailForm" onChange={handleId}/>
                     </div>
                     <div class="form-item">
                         <label for="passwordForm">Enter Password</label>
-                        <input type="password" id="passwordForm"/>
+                        <input type="password" id="passwordForm" onChange={handlePassword}/>
                     </div>
                     <Link to="/forgotpassword/admin">Forgot Password?</Link>
                     <div class="form-item">
