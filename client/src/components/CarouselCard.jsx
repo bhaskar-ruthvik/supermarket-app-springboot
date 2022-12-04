@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
 import Typography from '@mui/material/Typography';
@@ -22,10 +22,11 @@ import {
   carouselImage,
   fixedBottom,
 } from 'themes/commonStyles';
+import { locations } from 'data/mock-data';
 
 const CarouselCard = ({ location }) => {
   const [activeStep, setActiveStep] = React.useState(0);
-
+  const [id,setId] = useState("/item/"+location.item_code)
   const maxSteps = location.locationImages.length; // so that we know how many dots
 
   const handleNext = () => {
@@ -39,13 +40,16 @@ const CarouselCard = ({ location }) => {
   const handleStepChange = (step) => {
     setActiveStep(step); // handle swipe change
   };
+ 
   return (
-    <Box
+   
+ <Box
       className="carouselCard"
       sx={{
         flexGrow: 1,
         position: 'relative',
       }}
+      
     >
       <Box sx={fixedIcon}>
         <FaRegHeart size={24} color="#fff" />
@@ -101,12 +105,12 @@ const CarouselCard = ({ location }) => {
           }
         />
       </Box>
-      <Link to="/item">
+      <Link to={"/item/"+location.item_code}>
       <Box sx={flexBetween}>
         <Box sx={{ mt: 2 }}>
           <Typography component="h3"> {location.item_name}</Typography>
           <Typography component="h4">Expected delivery: {location.deliveryDate}</Typography>
-          <Typography component="h5"> {location.price}</Typography>
+          <Typography component="h5"> Rs. {location.offer_price}</Typography>
         </Box>
         <Box sx={{ mt: 2 }}>
           <Box sx={dFlex}>
@@ -126,6 +130,7 @@ const CarouselCard = ({ location }) => {
       </Box>
       </Link>
     </Box>
+  
   );
 };
 

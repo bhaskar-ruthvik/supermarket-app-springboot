@@ -35,7 +35,62 @@ public class Item {
     private Integer quantity;
     private Double rating;
     private LocalDate deliveryDate;
-    private String price;
+    private Double price;
+    private Double offer;
+    private String url1;
+    private String url2;
+    private String url3;
+    private String url4;
+
+    public Double getOffer_price() {
+        return Math.round((1-this.offer)*this.price*100)/100.0;
+    }
+
+    public void setOffer_price(Double offer_price) {
+        this.offer_price = offer_price;
+    }
+
+    @Transient
+    private Double offer_price;
+    public Double getOffer() {
+        return offer;
+    }
+
+    public void setOffer(Double offer) {
+        this.offer = offer;
+    }
+
+    public String getUrl1() {
+        return url1;
+    }
+
+    public void setUrl1(String url1) {
+        this.url1 = url1;
+    }
+
+    public String getUrl2() {
+        return url2;
+    }
+
+    public void setUrl2(String url2) {
+        this.url2 = url2;
+    }
+
+    public String getUrl3() {
+        return url3;
+    }
+
+    public void setUrl3(String url3) {
+        this.url3 = url3;
+    }
+
+    public String getUrl4() {
+        return url4;
+    }
+
+    public void setUrl4(String url4) {
+        this.url4 = url4;
+    }
 
     public Item() {
     }
@@ -63,31 +118,39 @@ public class Item {
 
 
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public Item(Long item_code, String item_name, Integer quantity, Double rating, LocalDate deliveryDate, String price) {
+    public Item(Long item_code, String item_name, Integer quantity, Double rating, LocalDate deliveryDate, Double price, Double offer, String url1, String url2, String url3, String url4) {
         this.item_code = item_code;
         this.item_name = item_name;
-
         this.quantity = quantity;
         this.rating = rating;
         this.deliveryDate = deliveryDate;
         this.price = price;
+        this.offer = offer;
+        this.url1 = url1;
+        this.url2 = url2;
+        this.url3 = url3;
+        this.url4 = url4;
     }
 
-    public Item(String item_name, Integer quantity, Double rating, LocalDate deliveryDate, String price) {
+    public Item(String item_name, Integer quantity, Double rating, LocalDate deliveryDate, Double price, double Dffer, String url1, String url2, String url3, String url4) {
         this.item_name = item_name;
-
         this.quantity = quantity;
         this.rating = rating;
         this.deliveryDate = deliveryDate;
         this.price = price;
+        this.offer = offer;
+        this.url1 = url1;
+        this.url2 = url2;
+        this.url3 = url3;
+        this.url4 = url4;
     }
 
     public String getItem_name() {

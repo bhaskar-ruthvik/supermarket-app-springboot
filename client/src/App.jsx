@@ -36,7 +36,7 @@ function App() {
         <Route path="/signout" element={<SignOut/>} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/admin" element={<Admin/>} />
-        <Route path="/item" element={<div><Header></Header><Item></Item></div>} />
+        <Route path="/item/:id" element={<Item/>}/>
       </Routes>
     </Router>
   );

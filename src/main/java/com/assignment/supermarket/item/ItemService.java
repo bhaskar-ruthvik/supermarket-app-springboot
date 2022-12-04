@@ -30,6 +30,13 @@ public class ItemService {
         }
         itemRepository.save(item);
     }
+    public Item getItem(Long id){
+        Optional<Item> ItemByID = itemRepository.findItemByID(id);
+        if(ItemByID.isPresent()){
+            return ItemByID.get();
+        }
+        return null;
+    }
 
     public void deleteItem(Long id) {
         itemRepository.findItemByID(id);

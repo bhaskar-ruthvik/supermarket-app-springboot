@@ -23,6 +23,11 @@ public class ItemController {
     {
         return itemservice.getItems();
     }
+    @GetMapping(path="{itemid}")
+    public Item getItem(@PathVariable("itemid")Long id)
+    {
+        return itemservice.getItem(id);
+    }
 
     @PostMapping
     public void registerNewItem(@RequestBody Item item)

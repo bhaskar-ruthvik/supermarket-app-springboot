@@ -20,7 +20,13 @@ public class ItemConfig {
                     20,
                     4.5,
                     LocalDate.of(2022, Month.DECEMBER, 20),
-                    "Rs. 29"
+                    29.0,
+                    0.5,
+                    "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                        "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
+
             );
 
             Item coke = new Item(
@@ -29,7 +35,13 @@ public class ItemConfig {
                     20,
                     4.99,
                     LocalDate.of(2022, Month.DECEMBER, 20),
-                    "Rs. 39"
+                    39.0,
+                    0.3,
+                    "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
+
             );
 
             Item oreo = new Item(
@@ -38,7 +50,12 @@ public class ItemConfig {
                     20,
                     4.6,
                     LocalDate.of(2022, Month.DECEMBER, 20),
-                    "Rs.30"
+                    30.0,
+                    0.25,
+                    "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
             );
 
             Item Haldirams = new Item(
@@ -47,7 +64,12 @@ public class ItemConfig {
                     20,
                     4.2,
                     LocalDate.of(2022, Month.DECEMBER, 21),
-                    "Rs.40"
+                    40.0,
+                    0.70,
+                    "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
             );
 
             Item SunflowerOil = new Item(
@@ -56,7 +78,13 @@ public class ItemConfig {
                     20,
                     4.1,
                     LocalDate.of(2022, Month.DECEMBER, 21),
-                    "Rs.176"
+                    176.0,
+                    0.2,
+                    "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
+
             );
 
             Item rice = new Item(
@@ -65,7 +93,12 @@ public class ItemConfig {
                     20,
                     4.6,
                     LocalDate.of(2022, Month.DECEMBER, 21),
-                    "Rs.1199"
+                    1199.0,
+                    0.5,
+                    "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
             );
 
             Item sugar = new Item(
@@ -74,7 +107,12 @@ public class ItemConfig {
                     20,
                     4.7,
                     LocalDate.of(2022, Month.DECEMBER, 21),
-                    "Rs.37"
+                    37.0,
+                    0.35,
+                    "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
             );
 
             Item atta = new Item(
@@ -83,7 +121,12 @@ public class ItemConfig {
                     20,
                     4.8,
                     LocalDate.of(2022, Month.DECEMBER, 21),
-                    "Rs.300"
+                    300.0,
+                    0.25,
+                    "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
             );
 
             Item toothpaste = new Item(
@@ -92,7 +135,12 @@ public class ItemConfig {
                     20,
                     4.5,
                     LocalDate.of(2022, Month.DECEMBER, 21),
-                    "Rs.100"
+                    100.0,
+                    0.4,
+                    "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
             );
 
             Item jam = new Item(
@@ -101,7 +149,12 @@ public class ItemConfig {
                     20,
                     4.3,
                     LocalDate.of(2022, Month.DECEMBER, 21),
-                    "Rs.220"
+                    220.0,
+                    0.45,
+                    "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
+                    "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
             );
 
             repository.saveAll
