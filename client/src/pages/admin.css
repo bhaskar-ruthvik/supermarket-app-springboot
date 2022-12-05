@@ -2,14 +2,28 @@
       display: flex;
       padding: 20px;
       gap: 20px;
-    }
+}
 
 .admin-table{
-    width: 80%;
+    width: auto;
     padding-top: 20px;
-    padding-left: 150px;
+    padding-left: 50px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.body{
+    display: flex;
+    
+}
+
+.sidebar{
+    width: 200px;
 }
 
 .app{
-    
-}
+    display: flex;
+    flex-direction: column;}
