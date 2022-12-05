@@ -1,6 +1,8 @@
 import Cart from "components/Cart";
 import HomePage from "pages/HomePage";
 import Item from "pages/Item";
+import Manager from "pages/Manager";
+import Customer from "pages/Customer";
 import SignIn from "pages/signup/SignIn";
 import SignUpManager from "pages/signup/SignUpManager"
 import SignInManager from "pages/signup/SignInManager"
@@ -41,6 +43,8 @@ function App() {
         <Route path="/admin" element={<Admin/>} />
         <Route path="/item/:id" element={<Item/>}/>
         <Route path="/itemedit/:id" element={<ItemEdit/>}/>
+        <Route path="/manager" element={<Manager></Manager>} />
+        <Route path="/customer" element={<Customer></Customer>} />
       </Routes>
     </Router>
   );

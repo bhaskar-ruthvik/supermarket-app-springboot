@@ -2,12 +2,11 @@
 import Header from 'components/Header'
 import Sidebar from 'components/Sidebar'
 import BasicTable from 'components/TableAdmin'
-import Widget from 'components/Widget'
 import React from 'react'
-import './admin.css'
+import './customer.css'
 
 
-function Admin() {
+function Customer() {
   return (
     <div className="app">
       <Header></Header>
@@ -17,12 +16,6 @@ function Admin() {
         <Sidebar></Sidebar>
       </div>
       <div className="content">
-      <div className="widgets">
-          <Widget type="user" />
-          <Widget type="order" />
-          <Widget type="earning" />
-          <Widget type="balance" />
-      </div>
       <div className="admin-table">
         <BasicTable></BasicTable>
       </div>
@@ -32,4 +25,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default Customer
