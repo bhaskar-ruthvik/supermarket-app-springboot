@@ -33,11 +33,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Sai', 159, 6.0, 24, 4.0),
-  createData('Karen', 237, 9.0, 37, 4.3),
-  createData('Jimmy', 262, 16.0, 24, 6.0),
-  createData('Sai JImmy', 305, 3.7, 67, 4.3),
-  createData('Chomuran', 356, 16.0, 49, 3.9),
+  createData('Sai', 159, 'saikarenjim@gmail.com', 'Hyderabad', 1500),
+  createData('Karen', 237,'saikarenjim@gmail.com', 'Hyderabad', 2567),
+  createData('Jimmy', 262, 'saikarenjim@gmail.com', 'Hyderabad', 2244),
+  createData('Sai JImmy', 305, 'saikarenjim@gmail.com', 'Hyderabad', 7800),
+  createData('Chomuran', 356, 'saikarenjim@gmail.com', 'Hyderabad', 5300),
 ];
 
 export default function BasicTable() {
