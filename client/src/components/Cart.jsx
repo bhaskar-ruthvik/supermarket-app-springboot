@@ -252,7 +252,7 @@ function Cart() {
         </div> */}
 
         <div class="total">
-          <span>Total</span> <span>₹ <span id="total">{offerTotal}</span></span>
+          <span><b>Total</b></span> <span>₹ <span id="total"><b>{Math.round(offerTotal*100)/100}</b></span></span>
         </div>
 
       </div>
