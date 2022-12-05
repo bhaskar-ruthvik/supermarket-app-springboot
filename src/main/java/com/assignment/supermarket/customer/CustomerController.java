@@ -20,12 +20,19 @@ public class CustomerController {
     public List<Customer> getCustomers(){
         return customerService.getCustomers();
     }
-
+    @PostMapping(path="/signin")
+    public boolean findCustomer(@RequestBody CustomerSignIn customerSignIn){
+        return customerService.findCustomer(customerSignIn);
+    }
     @PostMapping
-    public Integer registerNewCustomer(@RequestBody Customer customer){
+    public Long registerNewCustomer(@RequestBody Customer customer){
 
         return customerService.addNewCustomer(customer);
 
+    }
+    @PutMapping(path="{customerId}")
+    public Integer updateCustomer(@PathVariable("customerId")Long id,@RequestParam String password){
+        return customerService.updateCustomer(id,password);
     }
     @DeleteMapping(path = "{customerId}")
     public Integer deleteCustomer(@PathVariable("customerId") Long id){

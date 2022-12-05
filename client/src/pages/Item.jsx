@@ -1,80 +1,26 @@
-import React from 'react';
-import './item.css';
-import Colors from '../components/Colors'
-import DetailsThumb from '../components/DetailsThumb';
-import Header from 'components/Header';
+import React,{useState,useEffect} from 'react'
+import Header from 'components/Header'
+import Product from './Product'
+import { useParams } from 'react-router-dom'
+import { locations as cardLocations } from 'data/mock-data';
 
-class Item extends React.Component{
+const Item = () => {
+    const [cards] = useState(cardLocations);
+    const {id} = useParams();
+    console.log(id)
+const [bd,setBd]= useState({})
+const url = "http://localhost:8080/api/v1/item/"+id
+useEffect(()=>{
 
-  state = {
-    products: [
-      {
-        "_id": "1",
-        "title": "Lays Hot \'n\' Sweet Chilli",
-        "src": [
-            "https://www.bigbasket.com/media/uploads/p/l/294278_18-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
-            "https://www.bigbasket.com/media/uploads/p/l/294278-2_13-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
-            "https://www.bigbasket.com/media/uploads/p/l/294278-3_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg",
-            "https://www.bigbasket.com/media/uploads/p/l/294278-4_12-lays-potato-chips-hot-sweet-chilli-flavour-best-quality.jpg"
-          ],
-        "description": "UI/UX designing, html css tutorials",
-        "content": "Experience an out-of-this-world blend of hot and sweet seasoning! The Lay’s West Indies Hot 'n' Sweet Chilli is an exciting adventure waiting to be unfolded. The journey starts with high-quality, farm-grown potatoes cooked to crispy perfection.",
-        "price": 18,
-        "colors":["red","black","crimson","teal"],
-        "count": 1
-      }
-    ],
-    index: 0
-  };
-
-  myRef = React.createRef();
-
-  handleTab = index =>{
-    this.setState({index: index})
-    const images = this.myRef.current.children;
-    for(let i=0; i<images.length; i++){
-      images[i].className = images[i].className.replace("active", "");
-    }
-    images[index].className = "active";
-  };
-
-  componentDidMount(){
-    const {index} = this.state;
-    this.myRef.current.children[index].className = "active";
-  }
-
-
-  render(){
-    const {products, index} = this.state;
-    return(
-      <div className="app">
-          
-        {
-          products.map(item =>(
-            <div className="details" key={item._id}>
-              <div className="big-img">
-                <img src={item.src[index]} alt=""/>
-              </div>
-
-              <div className="box">
-                <div className="row">
-                  <h2>{item.title}</h2>
-                  <span>₹{item.price}</span>
-                </div>
-
-                <p>{item.description}</p>
-                <p>{item.content}</p>
-
-                <DetailsThumb images={item.src} tab={this.handleTab} myRef={this.myRef} />
-                <button className="cart">Add to cart</button>
-
-              </div>
-            </div>
-          ))
-        }
-      </div>
-    );
-  };
+	fetch(url)
+	.then(res=>{return res.json()})
+	.then(data =>{
+		console.log(data)
+		setBd(data)
+	})
+},[])
+  return (
+    <div><Header></Header><Product id={bd.item_code} name={bd.item_name} quantity={bd.quantity} rating={bd.rating} price={bd.price} offp = {bd.offer_price} img1={bd.url1} img2={bd.url2} img3={bd.url3} img4={bd.url4} off={bd.offer*100} delivery={bd.deliveryDate} ></Product></div>
+  )
 }
-
 export default Item;

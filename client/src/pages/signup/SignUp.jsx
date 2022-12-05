@@ -1,22 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import './signup.css'
 import {Link} from 'react-router-dom';
-
+import SplitButton from 'components/SplitButton';
+import signUp from './signUp.svg'
 function SignUp() {
-    useEffect(()=>{
-        fetch("http://localhost:8080/api/v1/customer")
-        .then(response =>{
-           return response.json()
-        }).then(data=>{
-          console.log(data)
-        })
-    },[])
+    // useEffect(()=>{
+    //     fetch("http://localhost:8080/api/v1/customer")
+    //     .then(response =>{
+    //        return response.json()
+    //     }).then(data=>{
+    //       console.log(data)
+    //     })
+    // },[])
     const [name,setName] = useState("");
     const [password,setPassword] = useState("");
     const [email,setEmail] = useState("");
     const [no,setNo] = useState("");
     const [address,setAddress] = useState("");
-    const [response,setResponse] = useState();
+    const [response,setResponse] = useState(-10);
+    const [balance,setBalance] = useState(5000)
+  function handleChange(event){
+    setBalance(event.target.value)
+  }
     function handleName(e){
         setName(e.target.value);
     }
@@ -46,7 +51,7 @@ function SignUp() {
                 "email": email,
                 "address": address,
                 "password": password,
-                "account_balance": 1000.0
+                "account_balance": balance
             
                
             })
@@ -74,6 +79,9 @@ function SignUp() {
             </div>
             <form class="login-form" autocomplete="off" onSubmit={handleClick}>
                 <div class="login-form-content">
+                <div>
+                <SplitButton onChange={handleChange} index={0}></SplitButton>
+                </div>
                     <div class="form-item">
                         <label for="passwordForm">Enter Name</label>
                         <input type="text" id="passwordForm" onChange={handleName}/>
@@ -95,10 +103,12 @@ function SignUp() {
                         <input type="text" id="passwordForm" onChange={handleAddress}/>
                     </div>
                     <button className="signup__button" type="submit">Sign Up</button>
-                </div>
+                    
+                    </div>
                 <div>
+                {response>-1 && <div><p className='success'>Signed up successfully!</p><p>Your user ID is {response}</p></div>}
                     <p>Already registered?       
-                    <Link to="/signin">    Sign In</Link>
+                    <Link to="/signin/customer">    Sign In</Link>
                     </p>
                 </div>
                 {/* <div class="login-form-footer">
@@ -111,7 +121,7 @@ function SignUp() {
             </form>
         </div>
         <div class="login-right">
-            <img src="./signIn.svg" alt="image"/>
+            <img src={signUp} alt="image"/>
         </div>
     </div>  
     </div>

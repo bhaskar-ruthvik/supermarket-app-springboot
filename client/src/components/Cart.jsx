@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import './cart.css'
 import {FiShoppingCart} from 'react-icons/fi';
 import {BsFillCreditCardFill} from 'react-icons/bs';
@@ -8,6 +8,33 @@ import {GrFormSubtract, GrFormClose} from 'react-icons/gr';
 import {Link} from 'react-router-dom';
 
 function Cart() {
+  const [bd,setBd] = useState([])
+  const [del,setDel] = useState(0)
+  useEffect(()=>{
+    let url = "http://localhost:8080/api/v1/cart/get/"+window.localStorage.getItem("id")
+    fetch(url)
+    .then(res=>{return res.json()})
+    .then(data=>{
+      setBd(data)
+    })
+  },[])
+  let total=0
+  let offerTotal=0
+  function handleItemDelete(e){
+    let url = "http://localhost:8080/api/v1/cart/"+e.target.firstElementChild.innerText
+    const requestOptions={
+      method: 'DELETE'
+  }
+  fetch(url,requestOptions)
+  .then(res=>{return res.json()})
+  .then(data=>{
+      setDel(data)
+      if(data==1){
+        window.location.reload()
+      }
+  })
+  }
+  const [tot,setTot] = useState(0)
     return (
         <div>
             <main class="container__cart">
@@ -16,7 +43,7 @@ function Cart() {
   <FiShoppingCart name="cart-outline"></FiShoppingCart> Shopping Cart
 </h1>
 
-<div class="item-flex">
+<div class="item-flex">   
 
   <section class="checkout">
 
@@ -82,16 +109,18 @@ function Cart() {
       </form>
 
     </div>
-
+    {del==1&& <label class="success">Deleted Item Successfully!</label>}
+    {del==-1&& <label class="success">Sorry Item could not be deleted!</label>}
     <button class="btn btn-primary">
-      <b>Pay</b> $ <span id="payAmount">2.15</span>
+      <b>Checkout</b><span id="payAmount"></span>
     </button>
 
     <Link to="/"><button class="btn btn-primary">
       <b>Cancel</b>
     </button></Link>
-
+    
   </section>
+
 
 
   
@@ -101,7 +130,7 @@ function Cart() {
 
       <h2 class="section-heading">Order Summary</h2>
 
-      <div class="product-card">
+      {/* <div class="product-card">
 
         <div class="card">
 
@@ -141,54 +170,59 @@ function Cart() {
 
         </div>
 
+      </div> */}
+
+      {bd.map((item)=>{ total= total + item.price*item.quantity
+      offerTotal = offerTotal+ item.offer_price*item.quantity
+  
+        return <div key={item.cartId}  class="product-card">
+
+<div class="card">
+
+  <div class="img-box">
+    <img src={item.url1} alt="Cabbage" width="80px" class="product-img" />
+  </div>
+
+  <div class="detail">
+
+    <h4 class="product-name">{item.name}</h4>
+
+    <div class="wrapper">
+
+      <div class="product-qty">
+        <button id="decrement">
+        <GrFormSubtract></GrFormSubtract>
+        </button>
+
+        <span id="quantity">{item.quantity}</span>
+        
+        <button id="increment">
+        <MdOutlineAdd></MdOutlineAdd>
+        </button>
       </div>
 
-      <div class="product-card">
-
-        <div class="card">
-
-          <div class="img-box">
-            <img src="./cabbage.jpg" alt="Cabbage" width="80px" class="product-img" />
-          </div>
-
-          <div class="detail">
-
-            <h4 class="product-name">Cabbage 1 Pcs</h4>
-
-            <div class="wrapper">
-
-              <div class="product-qty">
-                <button id="decrement">
-                <GrFormSubtract></GrFormSubtract>
-                </button>
-
-                <span id="quantity">1</span>
-
-                <button id="increment">
-                <MdOutlineAdd></MdOutlineAdd>
-                </button>
-              </div>
-
-              <div class="price">
-              ₹ <span id="price">60</span>
-              </div>
-
-            </div>
-
-          </div>
-
-          <button class="product-close-btn">
-            <GrFormClose></GrFormClose>
-          </button>
-
-        </div>
-
+      <div class="price">
+      ₹ <span id="price">{item.offer_price}</span>
       </div>
 
     </div>
 
-    <div class="wrapper">
+  </div>
 
+  <button onClick={handleItemDelete} class="product-close-btn">
+<p id="idp"> {item.cartId}</p>  X
+    
+  </button>
+
+</div>
+
+</div>
+
+      })}
+    </div>
+
+    <div class="wrapper">
+{/* 
       <div class="discount-token">
 
         <label for="discount-token" class="label-default">Gift card/Discount code</label>
@@ -201,24 +235,24 @@ function Cart() {
 
         </div>
 
-      </div>
+      </div> */}
 
       <div class="amount">
 
         <div class="subtotal">
-          <span>Subtotal</span> <span>₹ <span id="subtotal">205</span></span>
+          <span>Subtotal</span> <span>₹ <span id="subtotal">{total}</span></span>
         </div>
 
         <div class="tax">
-          <span>Tax</span> <span>₹ <span id="tax">010</span></span>
+          <span>Discount</span> <span>₹ <span id="tax">{Math.round((total-offerTotal)*100)/100}</span></span>
         </div>
 
-        <div class="shipping">
+        {/* <div class="shipping">
           <span>Shipping</span> <span>₹ <span id="shipping">000</span></span>
-        </div>
+        </div> */}
 
         <div class="total">
-          <span>Total</span> <span>₹ <span id="total">215</span></span>
+          <span>Total</span> <span>₹ <span id="total">{offerTotal}</span></span>
         </div>
 
       </div>

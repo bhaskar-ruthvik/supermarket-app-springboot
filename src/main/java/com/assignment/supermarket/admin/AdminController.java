@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/admin")
+@CrossOrigin
 public class AdminController {
     private final AdminService adminService;
 
@@ -20,13 +21,21 @@ public class AdminController {
     public List<Admin> getAdmins(){
         return adminService.getAdmins();
     }
+    @PostMapping(path="/signin")
+    public boolean findAdmin(@RequestBody AdminSignIn adminSignIn){
+        return adminService.findAdmin(adminSignIn);
+    }
     @PostMapping
-    public void registerNewAdmin(@RequestBody Admin admin){
+    public Long registerNewAdmin(@RequestBody Admin admin){
 
-        adminService.addNewAdmin(admin);
+        return adminService.addNewAdmin(admin);
+    }
+    @PutMapping(path="{adminId}")
+    public Integer updateAdmin(@PathVariable("adminId")Long id,@RequestParam String password){
+        return adminService.updateAdmin(id,password);
     }
     @DeleteMapping(path = "{adminId}")
-    public void deleteAdmin(@PathVariable("adminId") Long id){
-        adminService.deleteAdmin(id);
+    public Integer deleteAdmin(@PathVariable("adminId") Long id){
+       return adminService.deleteAdmin(id);
     }
 }

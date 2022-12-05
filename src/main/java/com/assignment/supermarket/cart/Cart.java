@@ -18,14 +18,76 @@ public class Cart{
             generator = "cart_sequence"
     )
     Long cartId;
+    Integer quantity;
+    private Long item_code;
 
-    private long id;
+    public Cart(Long cartId, Integer quantity, Long item_code, String name, Double rating, LocalDate date, LocalDate deliveryDate, Double price, Double offer, String url1, Double offer_price, Long customerId) {
+        this.cartId = cartId;
+        this.quantity = quantity;
+        this.item_code = item_code;
+        this.name = name;
+        this.rating = rating;
+        this.date = date;
+        this.deliveryDate = deliveryDate;
+        this.price = price;
+        this.offer = offer;
+        this.url1 = url1;
+        this.offer_price = offer_price;
+        this.customerId = customerId;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
     private String name;
-    private Boolean isNew;
+
     private Double rating;
     private LocalDate date;
-    private Integer price;
-    private long customerId;
+
+    private LocalDate deliveryDate;
+    private Double price;
+
+    public LocalDate getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(LocalDate deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    public Double getOffer() {
+        return offer;
+    }
+
+    public void setOffer(Double offer) {
+        this.offer = offer;
+    }
+
+    public String getUrl1() {
+        return url1;
+    }
+
+    public void setUrl1(String url1) {
+        this.url1 = url1;
+    }
+
+    public Double getOffer_price() {
+        return offer_price;
+    }
+
+    public void setOffer_price(Double offer_price) {
+        this.offer_price = offer_price;
+    }
+
+    private Double offer;
+    private String url1;
+    private Double offer_price;
+    private Long customerId;
 
     public Long getCartId() {
         return cartId;
@@ -35,28 +97,26 @@ public class Cart{
         this.cartId = cartId;
     }
 
-    public Cart(long id, String name, Boolean isNew, Double rating, LocalDate date, Integer price, long customerId){
-        this.id = id;
-        this.name = name;
-        this.isNew = isNew;
-        this.rating = rating;
-        this.date = date;
-        this.price = price;
-        this.customerId = customerId;
-    }
+
+//    public Cart(long cartId, String name, Double rating, LocalDate date, Double price, long customerId){
+//
+//        this.name = name;
+//        this.rating = rating;
+//        this.date = date;
+//        this.price = price;
+//        this.customerId = customerId;
+//    }
 
     public Cart(){
 
     }
 
-    public long getId() {
-        return id;
+    public void setItem_code(Long item_code){
+        this.item_code = item_code;
     }
-
-    public void setId(long id) {
-        this.id = id;
+    public Long getItem_code(){
+        return item_code;
     }
-
     public String getName() {
         return name;
     }
@@ -65,13 +125,6 @@ public class Cart{
         this.name = name;
     }
 
-    public Boolean getNew() {
-        return isNew;
-    }
-
-    public void setNew(Boolean aNew) {
-        isNew = aNew;
-    }
 
     public Double getRating() {
         return rating;
@@ -89,32 +142,36 @@ public class Cart{
         this.date = date;
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public long getCustomerId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(long customerId) {
+    public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "cartId = " + cartId + ", " +
-                "id = " + id + ", " +
-                "name = " + name + ", " +
-                "isNew = " + isNew + ", " +
-                "rating = " + rating + ", " +
-                "date = " + date + ", " +
-                "price = " + price + ", " +
-                "customerId = " + customerId + ")";
+        return "Cart{" +
+                "cartId=" + cartId +
+                ", item_code=" + item_code +
+                ", name='" + name + '\'' +
+                ", rating=" + rating +
+                ", date=" + date +
+                ", deliveryDate=" + deliveryDate +
+                ", price=" + price +
+                ", offer=" + offer +
+                ", url1='" + url1 + '\'' +
+                ", offer_price=" + offer_price +
+                ", customerId=" + customerId +
+                '}';
     }
 }

@@ -59,6 +59,11 @@ const theme = createTheme({
         disableRipple: true,
       },
       variant: 'text',
+    },
+    MuiSlider:{
+      thumb:{
+        color: "yellow"
+      }
     }
   }
 });

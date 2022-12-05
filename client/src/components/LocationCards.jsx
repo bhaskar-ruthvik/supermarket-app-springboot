@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { locations as cardLocations } from 'data/mock-data';
 import CarouselCard from './CarouselCard';
 
+
 const LocationCards = () => {
-  const [cards] = React.useState(cardLocations);
+  const [backend,setBackend]= useState([]);
+useEffect(()=>{
+  fetch("http://localhost:8080/api/v1/item")
+  .then(res=>{return res.json()})
+  .then(data=>{
+    console.log(data)
+    setBackend(data)
+    console.log(backend)
+  })
+},[])
+for(let i=0; i< backend.length;i++){
+    backend[i]["locationImages"] = [{id:1,url:backend[i].url1},{id:2,url:backend[i].url2},{id:3,url:backend[i].url3},{id:4,url:backend[i].url4}]
+}
+  const [cards] = useState(cardLocations);
   if (!cards.length) {
     return null;
   }
   return (
     <Box sx={{ mx: 2 }}>
       <Grid container rowSpacing={3} columnSpacing={3}>
-        {cards.map((location) => {
+        {backend.map((location) => {
           return (
             <Grid key={location.id} item xs={12} sm={4} md={4} lg={3}>
               <CarouselCard location={location} />

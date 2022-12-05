@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
@@ -11,10 +11,20 @@ import { flexCenter } from '../themes/commonStyles';
 import {Link} from 'react-router-dom'
 
 const ProfileSettings = () => {
+const [i,setI] = useState(0)
+useEffect(()=>{
+  if(window.localStorage.getItem("signin")=="true"){
+    setI(1)
+  }
+},[])
+  const message=["Become a user","Sign out"]
+  
   return (
     <Box sx={flexCenter}>
-    <Link to="/signup"> Become A User</Link>
+    {i==0&&<Link to="/signup/customer">{message[0]}</Link>}
+    {i==1&&<Link to="/signout">{message[1]}</Link>}
     <Stack>
+    
         <Link to="/cart"><Button>
             <IoCartOutline size={24} />
         </Button>

@@ -1,27 +1,69 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './signup.css';
-import {Link} from 'react-router-dom';
-
+import {Link,RedirectFunction} from 'react-router-dom';
+import SplitButtonSI from 'components/SplitButtonSI'
+import sign from './signIn.svg'
 function SignIn() {
+   
+    const [id,setId] = useState(-1)
+    const [password,setPassword] = useState("")
+    const [response,setResponse] = useState("-2")
+    let show = false;
+function handleClick(e){
+    e.preventDefault()
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                "id": id,
+                "password": password
+                
+            
+               
+            })
+        };
+        fetch("http://localhost:8080/api/v1/customer/signin",requestOptions)
+        .then(response => {return response.json()})
+        .then(data => {
+            console.log(data)   
+            setResponse(data);
+            window.localStorage.setItem("signin", data)
+            window.localStorage.setItem("type",-1)
+            window.localStorage.setItem("id",id)
+            if(data){
+                
+                window.location.replace("http://localhost:3000/home")
+            }
+        });
+}
+function handleId(e){
+    setId(e.target.value)
+}
+function handlePassword(e){
+    setPassword(e.target.value)
+}
     return (
         <div className="signup__body">
         <div class="container">
         <div class="login-left">
             <div class="login-header">
-                <h1>Welcome to SmartMart</h1>
+                <h1>Welcome to <Link to="/">SmartMart</Link></h1>
                 <p>Please login to use the platform</p>
             </div>
-            <form class="login-form" autocomplete="off">
+            <form class="login-form" autocomplete="off" onSubmit={handleClick}>
                 <div class="login-form-content">
+                <div>
+                <SplitButtonSI index={0}></SplitButtonSI>
+                </div>
                     <div class="form-item">
-                        <label for="emailForm">Enter Email</label>
-                        <input type="text" id="emailForm"/>
+                        <label for="emailForm">Enter User Id</label>
+                        <input type="text" id="emailForm" onChange={handleId}/>
                     </div>
                     <div class="form-item">
                         <label for="passwordForm">Enter Password</label>
-                        <input type="password" id="passwordForm"/>
+                        <input type="password" id="passwordForm" onChange={handlePassword}/>
                     </div>
-                    <a href=""><p>Forgot Password?</p></a>
+                    <Link to="/forgotpassword/customer">Forgot Password?</Link>
                     <div class="form-item">
                         <div class="checkbox">
                             <input type="checkbox" id="rememberMeCheckbox" checked/>
@@ -30,7 +72,7 @@ function SignIn() {
                     </div>
                     <div>
                     <p>Don't have an account?
-                    <Link to="/signup">    Sign Up</Link>
+                    <Link to="/signup/customer">    Sign Up</Link>
                     </p>
                 </div>
                     <button className="signup__button" type="submit">Sign In</button>
@@ -38,7 +80,7 @@ function SignIn() {
             </form>
         </div>
         <div class="login-right">
-            <img src="./signUp.svg" alt="image"/>
+            <img src={sign} alt="image"/>
         </div>
     </div>  
     </div>

@@ -43,7 +43,7 @@ body .signup__body {
 }
 
 .login-header {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .login-header h1 {
   font-size: 40px;
@@ -59,7 +59,7 @@ body .signup__body {
 .login-form-content {
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 25px;
 }
 .login-form-footer {
   display: flex;
@@ -159,4 +159,7 @@ input[type=checkbox] {
   .login-right {
     display: none;
   }
+}
+.success{
+  color : green
 }

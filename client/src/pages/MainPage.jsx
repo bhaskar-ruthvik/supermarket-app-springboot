@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Header from '../components/Header'
@@ -13,6 +13,7 @@ import MobileFooter from '../components/MobileFooter';
 ;
 
 function MainPage() {
+
     return (
         <React.Fragment>
       <CssBaseline/>

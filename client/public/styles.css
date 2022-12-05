@@ -18,3 +18,15 @@ html,body{
 .carouselCard:hover .MuiMobileStepper-dotActive {
   background-color: #fff
 }
+.acclabel,.acclabel1{
+  padding-bottom : 0.5rem;
+}
+.acclabel1{
+  padding-top:0.5rem;
+}
+.success{
+  color: green
+}
+#idp{
+  opacity: 0;
+}
