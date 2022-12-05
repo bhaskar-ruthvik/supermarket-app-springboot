@@ -105,8 +105,7 @@ const CarouselCard = ({ location }) => {
           }
         />
       </Box>
-      <Link to={"/item/"+location.item_code}>
-      <Box sx={flexBetween}>
+      {window.localStorage.getItem("type")==-1?<Link to={"/item/"+location.item_code}> <Box sx={flexBetween}>
         <Box sx={{ mt: 2 }}>
           <Typography component="h3"> {location.item_name}</Typography>
           <Typography component="h4">Expected delivery: {location.deliveryDate}</Typography>
@@ -128,7 +127,30 @@ const CarouselCard = ({ location }) => {
           </Box>
         </Box>
       </Box>
-      </Link>
+      </Link>:<Link to={"/itemedit/"+location.item_code}> <Box sx={flexBetween}>
+        <Box sx={{ mt: 2 }}>
+          <Typography component="h3"> {location.item_name}</Typography>
+          <Typography component="h4">Expected delivery: {location.deliveryDate}</Typography>
+          <Typography component="h5"> Rs. {location.offer_price}</Typography>
+        </Box>
+        <Box sx={{ mt: 2 }}>
+          <Box sx={dFlex}>
+            {location.isNew ? (
+              <React.Fragment>
+                <Typography component="h5">New</Typography>
+                <AiFillStar size={18} />
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                <Typography component="h5"> {location.rating}</Typography>
+                <AiFillStar size={18} />
+              </React.Fragment>
+            )}
+          </Box>
+        </Box>
+      </Box>
+      </Link>}
+     
     </Box>
   
   );

@@ -13,10 +13,46 @@ function Product(props) {
 	const [currentProductImage, setCurrentProductImage] = useState(0);
 	const [lightbox, setLightbox] = useState(false);
 	const [price,setPrice] = useState(0)
-	// Handle action add items to cart
+	const [cart,setCart]=useState(0)
+	
+	
 	const handleAddToCart = () => {
+		var today = new Date();
+		var dd = String(today.getDate()).padStart(2, '0');
+		var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+		var yyyy = today.getFullYear();
+
+		today = yyyy + '-' + mm + '-' + dd;
+		const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                "name": props.name,
+                "item_code": props.id,
+                "quantity": productQuantity,
+                "price": props.price,
+                "offer": props.off,
+				"offer_price": props.offp,
+				"url1" : props.img1,
+				"rating" : props.rating,
+				"date" : today,
+                "deliveryDate": props.delivery,
+				"customerId": window.localStorage.getItem("id")	 
+            
+               
+            })
+        };
+        fetch("http://localhost:8080/api/v1/cart",requestOptions)
+        .then(response => {return response.json()})
+        .then(data => {
+            console.log(data)   
+            setCart(data);
+            console.log(cart);
+        });
+		
 		setCartProductQuantity((prevState) => prevState + productQuantity);
 		setProductQuantity(0);
+		
 	};
 	const images=[props.img1,props.img2,props.img3,props.img4]
 	return (
@@ -157,10 +193,14 @@ function Product(props) {
 							</svg>
 							Add to cart
 						</button>
+						
 					</div>
-				</div>
+					{cart==1&& <p className='fw-400 line-height-500 fs-400 success'>
+						Added to cart successfully!
+					</p>}
+				</div>	
 			</div>
-
+			
 			{lightbox && <Lightbox images={images} setLightbox={setLightbox} />}
 		</main>
 	);

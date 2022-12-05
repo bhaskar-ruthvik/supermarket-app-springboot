@@ -28,6 +28,8 @@ function handleClick(e){
             console.log(data)   
             setResponse(data);
             window.localStorage.setItem("signin", data)
+            window.localStorage.setItem("type",-1)
+            window.localStorage.setItem("id",id)
             if(data){
                 
                 window.location.replace("http://localhost:3000/home")
@@ -45,7 +47,7 @@ function handlePassword(e){
         <div class="container">
         <div class="login-left">
             <div class="login-header">
-                <h1>Welcome to SmartMart</h1>
+                <h1>Welcome to <Link to="/">SmartMart</Link></h1>
                 <p>Please login to use the platform</p>
             </div>
             <form class="login-form" autocomplete="off" onSubmit={handleClick}>

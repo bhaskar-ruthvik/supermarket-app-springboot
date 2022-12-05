@@ -28,6 +28,7 @@ function handleClick(e){
             console.log(data)   
             setResponse(data);
             window.localStorage.setItem("signin", data)
+            window.localStorage.setItem("type",1)
             if(data){
                 
                 window.location.replace("http://localhost:3000/home")

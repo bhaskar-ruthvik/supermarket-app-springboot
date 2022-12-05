@@ -20,7 +20,7 @@ useEffect(()=>{
 	})
 },[])
   return (
-    <div><Header></Header><Product name={bd.item_name} quantity={bd.quantity} rating={bd.rating} price={bd.price} offp = {bd.offer_price} img1={bd.url1} img2={bd.url2} img3={bd.url3} img4={bd.url4} off={bd.offer*100} delivery={bd.deliveryDate} ></Product></div>
+    <div><Header></Header><Product id={bd.item_code} name={bd.item_name} quantity={bd.quantity} rating={bd.rating} price={bd.price} offp = {bd.offer_price} img1={bd.url1} img2={bd.url2} img3={bd.url3} img4={bd.url4} off={bd.offer*100} delivery={bd.deliveryDate} ></Product></div>
   )
 }
 export default Item;

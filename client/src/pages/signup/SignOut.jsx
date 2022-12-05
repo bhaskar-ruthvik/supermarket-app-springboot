@@ -12,7 +12,7 @@ function SignOut() {
         <div class="container">
         <div class="login-left">
             <div class="login-header">
-                <h1>Welcome to SmartMart</h1>
+                <h1>Welcome to <Link to="/">SmartMart</Link></h1>
                 <p>Please login to use the platform</p>
             </div>
             <form class="login-form" autocomplete="off">
@@ -40,7 +40,7 @@ function SignOut() {
                     
                     </p>
                 </div>
-                    <button className="signup__button" type="submit"><Link to="/signin/customer">Sign In</Link></button>
+                <Link to="/signin/customer"><button className="signup__button" type="submit">Sign In</button></Link>
                 </div>
             </form>
         </div>

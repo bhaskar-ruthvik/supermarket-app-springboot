@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Header from '../components/Header'
@@ -11,16 +11,17 @@ import { displayOnDesktop } from '../themes/commonStyles';
 import MobileFooter from '../components/MobileFooter';
 
 function HomePage() {
+
     return (
         <React.Fragment>
       <CssBaseline/>
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
-        height: '100vh'
+        height: '100vh',
       }}>
         <Box>
-          <Header ind={0}/>
+          <Header/>
           <OptionsTab />
           
         </Box>

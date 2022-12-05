@@ -22,22 +22,37 @@ public class CartService {
         return cartRepository.findAll();
     }
 
-    public void addNewCart(Cart cart) {
-        Optional <Cart> cartById = cartRepository.findCartById(cart.getId());
-        if(cartById.isPresent()){
-            throw new IllegalStateException("taken");
+    public Integer addNewCart(Cart cart) {
+        Optional <Cart> cartById = cartRepository.findCartById(cart.getCustomerId());
+        if(cartById.isPresent()&& cartById.get().getItem_code()== cart.getItem_code()){
+            return 0;
         }
         cartRepository.save(cart);
+        return 1;
     }
 
-    public void deleteCart(Long cartId){
+    public Integer deleteFromCart(Long cartId){
         boolean exists = cartRepository.existsById(cartId);
         if(!exists){
-            throw new IllegalStateException("cart with "+ cartId+ " does not exist");
+           return -1;
         }
         cartRepository.deleteById(cartId);
+        return 1;
     }
+    public Integer deleteCart(Long customerId){
+        List<Cart> cartByCustomerId = cartRepository.findCartByCustomerId(customerId);
+        for(int i=0; i< cartByCustomerId.size();i++){
+            cartRepository.deleteById(cartByCustomerId.get(i).getCartId());
+        }
 
+        return 1;
+    }
+    public List<Cart> getCartById(Long customerId){
+
+
+            return cartRepository.findCartByCustomerId(customerId);
+
+    }
     @Transactional
     public void updateCart(Long cartId){
         Cart cart = cartRepository.findById(cartId).orElseThrow(()-> new IllegalStateException("does not exist"));

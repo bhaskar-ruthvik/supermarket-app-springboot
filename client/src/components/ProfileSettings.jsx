@@ -10,15 +10,19 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import { flexCenter } from '../themes/commonStyles';
 import {Link} from 'react-router-dom'
 
-const ProfileSettings = (props) => {
-
-  const[signIn,setSignIn] = useState(window.localStorage.getItem("signin"));
+const ProfileSettings = () => {
+const [i,setI] = useState(0)
+useEffect(()=>{
+  if(window.localStorage.getItem("signin")=="true"){
+    setI(1)
+  }
+},[])
   const message=["Become a user","Sign out"]
   
   return (
     <Box sx={flexCenter}>
-    {props.id==0&&<Link to="/signup/customer">{message[props.id]}</Link>}
-    {props.id==1&&<Link to="/signout">{message[props.id]}</Link>}
+    {i==0&&<Link to="/signup/customer">{message[0]}</Link>}
+    {i==1&&<Link to="/signout">{message[1]}</Link>}
     <Stack>
     
         <Link to="/cart"><Button>

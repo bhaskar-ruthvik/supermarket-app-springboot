@@ -7,6 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/cart")
+@CrossOrigin
 public class CartController{
     private final CartService cartService;
 
@@ -20,14 +21,24 @@ public class CartController{
         return cartService.getCarts();
     }
 
+    @GetMapping(path ="/get/{id}")
+    public List<Cart> getCartByCustomerId(@PathVariable("id") Long customerId){
+        return cartService.getCartById(customerId);
+    }
+
     @PostMapping
-    public void addToCart(@RequestBody Cart cart){
-        cartService.addNewCart(cart);
+    public Integer addToCart(@RequestBody Cart cart){
+        return cartService.addNewCart(cart);
     }
 
     @DeleteMapping(path = "{cartId}")
-    public void deleteCart(@PathVariable("cartId") Long cartId){
-        cartService.deleteCart(cartId);
+    public Integer deleteFromCart(@PathVariable("cartId") Long cartId){
+        return cartService.deleteFromCart(cartId);
+
+    }
+    @DeleteMapping(path = "delete/{customerId}")
+    public Integer deleteCart(@PathVariable("customerId") Long cartId){
+        return cartService.deleteFromCart(cartId);
 
     }
 

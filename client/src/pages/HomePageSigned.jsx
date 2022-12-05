@@ -14,7 +14,7 @@ function HomePageSigned() {
     useEffect(()=>{
         
     },[])
-    if(window.localStorage.getItem("signin")==false){
+    if(window.localStorage.getItem("signin")=="false"){
         window.location.replace("http://localhost:3000/home")
     } 
     return (
@@ -26,7 +26,7 @@ function HomePageSigned() {
         height: '100vh'
       }}>
         <Box>
-          <Header ind={1}/>
+          <Header/>
           <OptionsTab />
           
         </Box>

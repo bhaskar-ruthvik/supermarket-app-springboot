@@ -1,4 +1,4 @@
-import Cart from "pages/Cart";
+import Cart from "components/Cart";
 import HomePage from "pages/HomePage";
 import Item from "pages/Item";
 import SignIn from "pages/signup/SignIn";
@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage/>} />
         <Route path="/home" element={<HomePage/>} />
-        <Route path="/home/signed" element={<HomePageSigned/>} />
+        {/* <Route path="/home/signed" element={<HomePageSigned/>} /> */}
         <Route path="/signup/customer" element={<SignUp/>} />
         <Route path="/signup/admin" element={<SignUpAdmin/>} />
         <Route path="/signup/manager" element={<SignUpManager/>} />
