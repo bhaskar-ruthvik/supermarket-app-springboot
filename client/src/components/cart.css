@@ -265,6 +265,10 @@ input::-webkit-outer-spin-button {
   margin-right: 50px;
 }
 
+.body{
+	overflow: scroll;
+}
+
 .btn-primary b { margin-right: 10px; }
 
 
@@ -282,6 +286,9 @@ input::-webkit-outer-spin-button {
 .cart-item-box {
   padding: 40px var(--px);
   margin-bottom: auto;
+  
+    overflow: scroll;
+
 }
 
 .product-card:not(:last-child) { margin-bottom: 20px; }
@@ -419,6 +426,7 @@ input::-webkit-outer-spin-button {
     grid-template-columns: 1fr 1fr;
     width: 100%;
     border-bottom: 1px solid var(--gainsboro);
+    overflow: scroll;
   }
 
   .cart .wrapper { margin-top: auto; }
@@ -426,7 +434,14 @@ input::-webkit-outer-spin-button {
   .cart .cart-item-box {
     border-right: 1px solid var(--gainsboro);
     margin-bottom: 0;
+    overflow: scroll;
   }
+*{
+  overflow: scroll;
+}
+body{
+  overflow: scroll;
+}
 
   .discount-token { border-top: none; }
 

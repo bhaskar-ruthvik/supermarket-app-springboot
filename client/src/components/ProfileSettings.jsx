@@ -25,18 +25,28 @@ useEffect(()=>{
     {i==1&&<Link to="/signout">{message[1]}</Link>}
     <Stack>
     
-        <Link to="/cart"><Button>
+       {window.localStorage.getItem("type")=="-1"&& <Link to="/cart"><Button>
             <IoCartOutline size={24} />
         </Button>
-        </Link>
+        </Link>}
         <Button 
         sx={{
             borderRadius: 10, border: '1px solid #ddd'
         }}>
+       {window.localStorage.getItem("type")=="-1"&& <Link to="/orders">
         <Stack>
             <AiOutlineMenu size={24}/>
             <FaRegUserCircle size={24}/>
+          
         </Stack>
+        </Link> }
+        {window.localStorage.getItem("type")=="0"&& <Link to="/admin">
+        <Stack>
+            <AiOutlineMenu size={24}/>
+            <FaRegUserCircle size={24}/>
+          
+        </Stack>
+        </Link> }
 
         </Button>
     </Stack>

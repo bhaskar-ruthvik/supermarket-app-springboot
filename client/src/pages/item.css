@@ -112,7 +112,7 @@
 }
 
 /* Navbar Media Queries */
-/* @media (max-width: 48em) {
+/* 	@media (max-width: 48em) {
 	.navbar-container {
 		--gap: 1rem;
 	}
@@ -216,6 +216,10 @@
 .cart__item {
 	flex-direction: column;
 	--gap: 2rem;
+}
+
+body{
+	overflow: scroll;
 }
 
 .item {
