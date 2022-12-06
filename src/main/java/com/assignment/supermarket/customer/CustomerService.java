@@ -43,6 +43,13 @@ public class CustomerService {
         return false;
 
     }
+    public Customer getCustomer(Long id){
+        Optional<Customer> customerByID = customerRepository.findCustomerByID(id);
+        if(customerByID.isPresent()){
+            return customerByID.get();
+        }
+        return null;
+    }
     @Transactional
     public Integer updateCustomer(Long id, String password){
             if(customerRepository.findById(id).isPresent()){

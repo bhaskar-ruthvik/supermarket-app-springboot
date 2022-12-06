@@ -17,13 +17,21 @@ function Cart() {
   const [bd,setBd] = useState([])
   const [del,setDel] = useState(0)
   const [orderId,setOrderId] = useState(0)
+  const [usD,setUsD] = useState({})
   useEffect(()=>{
     let url = "http://localhost:8080/api/v1/cart/get/"+window.localStorage.getItem("id")
+    let url1 = "http://localhost:8080/api/v1/customer/"+window.localStorage.getItem("id")
     fetch(url)
     .then(res=>{return res.json()})
     .then(data=>{
       setBd(data)
+      return fetch(url1)
+      .then(res=>{return res.json()})
+      .then(data=>{
+        setUsD(data)
+      })
     })
+  
   },[])
   let total=0
   let offerTotal=0
@@ -101,7 +109,7 @@ function Cart() {
 
   <section class="checkout">
 
-    <h2 class="section-heading">Payment Details</h2>
+    <h2 class="section-heading">Welcome {usD.username}</h2>
 
     <div class="payment-form">
 
@@ -110,36 +118,43 @@ function Cart() {
         <button class="method selected">
           <BsFillCreditCardFill></BsFillCreditCardFill>
 
-          <span>Credit Card</span>
+          <span>Account Balance : {usD.account_balance}</span>
 
           <ion-icon class="checkmark fill" name="checkmark-circle"></ion-icon>
         </button>
 
-        <button class="method">
+        {/* <button class="method">
           <RiSecurePaymentFill></RiSecurePaymentFill>
 
           <span>UPI</span>
 
           <ion-icon class="checkmark" name="checkmark-circle-outline"></ion-icon>
-        </button>
+        </button> */}
 
       </div>
 
       <form action="#">
 
         <div class="cardholder-name">
-          <label for="cardholder-name" class="label-default">Cardholder name</label>
-          <input type="text" name="cardholder-name" id="cardholder-name" class="input-default" />
+          <label for="cardholder-name" class="label-default">Address</label>
+          {/* <input type="text" name="cardholder-name" id="cardholder-name" class="input-default" /> */}
+          <span>   {usD.address}</span>
         </div>
 
         <div class="card-number">
-          <label for="card-number" class="label-default">Card number</label>
-          <input type="number" name="card-number" id="card-number" class="input-default" />
+          <label for="card-number" class="label-default">Phone Number</label>
+          {/* <input type="number" name="card-number" id="card-number" class="input-default" /> */}
+          <span>   {usD.phoneNumber}</span>
+        </div>
+        <div class="card-number">
+          <label for="card-number" class="label-default">Email</label>
+          {/* <input type="number" name="card-number" id="card-number" class="input-default" /> */}
+          <span>   {usD.email}</span>
         </div>
 
         <div class="input-flex">
 
-          <div class="expire-date">
+          {/* <div class="expire-date">
             <label for="expire-date" class="label-default">Expiration date</label>
 
             <div class="input-flex">
@@ -156,7 +171,7 @@ function Cart() {
           <div class="cvv">
             <label for="cvv" class="label-default">CVV</label>
             <input type="number" name="cvv" id="cvv" class="input-default" />
-          </div>
+          </div> */}
 
         </div>
 

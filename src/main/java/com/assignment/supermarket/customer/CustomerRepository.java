@@ -17,4 +17,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
                 }
                 return false;
         }
+    @Query("SELECT c FROM Customer c WHERE c.id = ?1")
+    Optional<Customer> findCustomerByID(Long id);
 }

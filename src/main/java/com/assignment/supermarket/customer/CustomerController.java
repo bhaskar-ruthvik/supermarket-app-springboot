@@ -20,6 +20,11 @@ public class CustomerController {
     public List<Customer> getCustomers(){
         return customerService.getCustomers();
     }
+    @GetMapping(path="{userid}")
+    public Customer getCustomer(@PathVariable("userid")Long id)
+    {
+        return customerService.getCustomer(id);
+    }
     @PostMapping(path="/signin")
     public boolean findCustomer(@RequestBody CustomerSignIn customerSignIn){
         return customerService.findCustomer(customerSignIn);
