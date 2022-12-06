@@ -107,6 +107,9 @@ function SignUp() {
                     </div>
                 <div>
                 {response>-1 && <div><p className='success'>Signed up successfully!</p><p>Your user ID is {response}</p></div>}
+                {response==-2 && <div><p>Sorry, not enough balance!</p></div>}
+                {response==-3 && <div><p>Sorry, incorrect format for email address!</p></div>}
+                {response==-4 && <div><p>Sorry, incorrect format for phone number!</p></div>}
                     <p>Already registered?       
                     <Link to="/signin/customer">    Sign In</Link>
                     </p>
