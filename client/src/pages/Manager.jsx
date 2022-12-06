@@ -1,13 +1,19 @@
 // import Example from 'components/Chart'
+import React, { useEffect } from 'react'
 import Header from 'components/Header'
 import Sidebar from 'components/Sidebar'
 import BasicTableManager from 'components/TableManager'
 import Widget from 'components/Widget'
-import React from 'react'
 import './manager.css'
 
 
+
 function Manager() {
+    useEffect(()=>{
+        if(window.localStorage.getItem("type")!=("0")){
+            window.location.replace("http://localhost:3000/")
+        }
+    })
   return (
     <div className="app">
       <Header></Header>

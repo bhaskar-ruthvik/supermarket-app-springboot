@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class CustomerService {
@@ -21,6 +23,18 @@ public class CustomerService {
     public Long addNewCustomer(Customer customer){
         Optional<Customer> customerByEmail = customerRepository.findCustomerByEmail(customer.getEmail());
         boolean hasMinimumBalance = CustomerRepository.checkAccountBalance(customer.getAccount_balance());
+        String emailformat = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+        boolean emailIsValid = customer.getEmail().matches(emailformat);
+        if(!emailIsValid)
+        {
+            throw new IllegalStateException("Email has to be of the form: abc@email.xyz ");
+        }
+        String phoneformat = "^[0-9]{10}$";
+        boolean phoneIsValid = customer.getPhoneNumber().matches(phoneformat);
+        if(!phoneIsValid)
+        {
+            throw new IllegalStateException("Phone number has to be a 10 digit number");
+        }
         if(customerByEmail.isPresent()){
             return -1L;
         }
