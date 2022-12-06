@@ -40,10 +40,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 //   createData('Chomuran', 356, 'saikarenjim@gmail.com', 'Hyderabad', 5300),
 // ];
 
-export default function BasicTable() {
+export default function BasicTableCustomer() {
   const [rows,setRows] = React.useState([])
   React.useEffect(()=>{
-    fetch("http://localhost:8080/api/v1/item")
+    fetch("http://localhost:8080/api/v1/customer")
     .then(res=>{return res.json()})
     .then(data=>{console.log(data); 
       setRows(data)})
@@ -54,29 +54,29 @@ export default function BasicTable() {
         <TableHead>
           <TableRow>
             {/* <StyledTableCell>User</StyledTableCell> */}
-            <StyledTableCell align="right">item_code</StyledTableCell>
-            <StyledTableCell align="right">item_name</StyledTableCell>
-            <StyledTableCell align="right">quantity</StyledTableCell>
-            <StyledTableCell align="right">rating</StyledTableCell>
-            <StyledTableCell align="right">deliveryDate</StyledTableCell>
-            <StyledTableCell align="right">price</StyledTableCell>
-            <StyledTableCell align="right">offer</StyledTableCell>
-            <StyledTableCell align="right">offer_price</StyledTableCell>
+            <StyledTableCell align="right">userId</StyledTableCell>
+            <StyledTableCell align="right">username</StyledTableCell>
+            <StyledTableCell align="right">phoneNumber</StyledTableCell>
+            <StyledTableCell align="right">email</StyledTableCell>
+            <StyledTableCell align="right">address</StyledTableCell>
+            <StyledTableCell align="right">password</StyledTableCell>
+            <StyledTableCell align="right">account_balance</StyledTableCell>
+       
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <StyledTableRow key={row.item_code}>
+            <StyledTableRow key={row.userID}>
               <StyledTableCell component="th" scope="row">
-                {row.item_code}
+                {row.userID}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.item_name}</StyledTableCell>
-              <StyledTableCell align="right">{row.quantity}</StyledTableCell>
-              <StyledTableCell align="right">{row.rating}</StyledTableCell>
-              <StyledTableCell align="right">{row.deliveryDate}</StyledTableCell>
-              <StyledTableCell align="right">{row.price}</StyledTableCell>
-              <StyledTableCell align="right">{row.offer}</StyledTableCell>
-              <StyledTableCell align="right">{row.offer_price}</StyledTableCell>
+              <StyledTableCell align="right">{row.username}</StyledTableCell>
+              <StyledTableCell align="right">{row.phoneNumber}</StyledTableCell>
+              <StyledTableCell align="right">{row.email}</StyledTableCell>
+              <StyledTableCell align="right">{row.address}</StyledTableCell>
+              <StyledTableCell align="right">{row.password}</StyledTableCell>
+              <StyledTableCell align="right">{row.account_balance}</StyledTableCell>
+             
             </StyledTableRow>
           ))}
         </TableBody>

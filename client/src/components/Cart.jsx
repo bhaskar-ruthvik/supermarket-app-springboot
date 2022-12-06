@@ -8,8 +8,15 @@ import {GrFormSubtract, GrFormClose} from 'react-icons/gr';
 import {Link} from 'react-router-dom';
 
 function Cart() {
+  var today = new Date();
+		var dd = String(today.getDate()).padStart(2, '0');
+		var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+		var yyyy = today.getFullYear();
+
+		today = yyyy + '-' + mm + '-' + dd;
   const [bd,setBd] = useState([])
   const [del,setDel] = useState(0)
+  const [orderId,setOrderId] = useState(0)
   useEffect(()=>{
     let url = "http://localhost:8080/api/v1/cart/get/"+window.localStorage.getItem("id")
     fetch(url)
@@ -34,6 +41,53 @@ function Cart() {
       }
   })
   }
+  function handleReload(){
+    handleCl()
+    // window.location.reload()
+  }
+  function handleCl(){
+    let url = "http://localhost:8080/api/v1/orders/get/"+window.localStorage.getItem("id")
+    fetch(url)
+    .then(res=>{return res.json()})
+    .then(data=>{console.log(data.length)
+    setOrderId(data.length)
+      window.localStorage.setItem("orderid",data.length)
+  })
+   for(let i=0;i<bd.length;i++){
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+          "customer_id": window.localStorage.getItem("id"),
+          "item_code": bd[i].item_code,
+          "item_name": bd[i].name, 
+          "order_id": orderId,
+          "quantity": bd[i].quantity,
+          "rating" : bd[i].rating,
+          "price" : bd[i].price,
+          "offer" : bd[i].offer,
+          "offer_price" : bd[i].offer_price,
+          "deliveryDate" : bd[i].deliveryDate,
+          "url1" : bd[i].url1
+          
+      
+         
+      })
+  };
+    fetch("http://localhost:8080/api/v1/orders",requestOptions)
+    .then(res=>{return res.json()})
+    .then(data=>{console.log(data)})
+  let url = "http://localhost:8080/api/v1/cart/"+bd[i].cartId
+  const reqOp={
+    method : 'DELETE'
+  }
+  fetch(url,reqOp)
+  .then(res=>{return res.json()})
+  .then(data=>{console.log(data)})
+  
+}
+   }
+      
   const [tot,setTot] = useState(0)
     return (
         <div>
@@ -111,9 +165,12 @@ function Cart() {
     </div>
     {del==1&& <label class="success">Deleted Item Successfully!</label>}
     {del==-1&& <label class="success">Sorry Item could not be deleted!</label>}
-    <button class="btn btn-primary">
-      <b>Checkout</b><span id="payAmount"></span>
+    
+    <button class="btn btn-primary" onClick={handleReload}>
+      <b>Checkout</b>{/*<span id="payAmount"></span>*/}
     </button>
+    
+   
 
     <Link to="/"><button class="btn btn-primary">
       <b>Cancel</b>
@@ -252,7 +309,7 @@ function Cart() {
         </div> */}
 
         <div class="total">
-          <span>Total</span> <span>₹ <span id="total">{offerTotal}</span></span>
+          <span><b>Total</b></span> <span>₹ <span id="total"><b>{Math.round(offerTotal*100)/100}</b></span></span>
         </div>
 
       </div>

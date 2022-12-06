@@ -40,7 +40,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 //   createData('Chomuran', 356, 'saikarenjim@gmail.com', 'Hyderabad', 5300),
 // ];
 
-export default function BasicTable() {
+export default function BasicTableItem() {
   const [rows,setRows] = React.useState([])
   React.useEffect(()=>{
     fetch("http://localhost:8080/api/v1/item")

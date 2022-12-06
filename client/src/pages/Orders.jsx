@@ -1,29 +1,26 @@
 // import Example from 'components/Chart'
 import Header from 'components/Header'
 import Sidebar from 'components/Sidebar'
-import BasicTableManager from 'components/TableManager'
+import BasicTableOrder from 'components/TableOrder'
 import Widget from 'components/Widget'
 import React from 'react'
-import './manager.css'
+import './orders.css'
 
 
-function Manager() {
+function Orders() {
   return (
     <div className="app">
       <Header></Header>
 
-      <div className="body">
-      <div className="sidebar">
-        <Sidebar></Sidebar>
+      <div className="obody">
+      <h2>My Orders</h2>
+     
       </div>
-      <div className="content">
       <div className="admin-table">
-        <BasicTableManager></BasicTableManager>
-      </div>
-      </div>
+        <BasicTableOrder></BasicTableOrder>
       </div>
     </div>
   )
 }
 
-export default Manager
+export default Orders

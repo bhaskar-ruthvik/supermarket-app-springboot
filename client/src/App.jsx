@@ -20,6 +20,8 @@ import ForgotPasswordManager from "pages/signup/ForgotPasswordManager";
 import ForgotPasswordAdmin from "pages/signup/ForgotPasswordAdmin";
 import HomePageSigned from "pages/HomePageSigned";
 import ItemEdit from "pages/ItemEdit";
+import Orders from "pages/Orders";
+import ProductList from "pages/ProductList";
 function App() {
 
  
@@ -45,6 +47,8 @@ function App() {
         <Route path="/itemedit/:id" element={<ItemEdit/>}/>
         <Route path="/manager" element={<Manager></Manager>} />
         <Route path="/customer" element={<Customer></Customer>} />
+        <Route path="/products" element={<ProductList></ProductList>} />
+        <Route path="/orders" element={<Orders></Orders>} />
       </Routes>
     </Router>
   );

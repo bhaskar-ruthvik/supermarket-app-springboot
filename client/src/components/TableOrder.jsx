@@ -40,10 +40,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 //   createData('Chomuran', 356, 'saikarenjim@gmail.com', 'Hyderabad', 5300),
 // ];
 
-export default function BasicTable() {
+export default function BasicTableOrder() {
   const [rows,setRows] = React.useState([])
   React.useEffect(()=>{
-    fetch("http://localhost:8080/api/v1/item")
+    let url = "http://localhost:8080/api/v1/orders/get/"+window.localStorage.getItem("id")
+    fetch(url)
     .then(res=>{return res.json()})
     .then(data=>{console.log(data); 
       setRows(data)})
@@ -54,6 +55,7 @@ export default function BasicTable() {
         <TableHead>
           <TableRow>
             {/* <StyledTableCell>User</StyledTableCell> */}
+            <StyledTableCell>order_id</StyledTableCell>
             <StyledTableCell align="right">item_code</StyledTableCell>
             <StyledTableCell align="right">item_name</StyledTableCell>
             <StyledTableCell align="right">quantity</StyledTableCell>
@@ -61,7 +63,7 @@ export default function BasicTable() {
             <StyledTableCell align="right">deliveryDate</StyledTableCell>
             <StyledTableCell align="right">price</StyledTableCell>
             <StyledTableCell align="right">offer</StyledTableCell>
-            <StyledTableCell align="right">offer_price</StyledTableCell>
+            {/* <StyledTableCell align="right">offer_price</StyledTableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -70,13 +72,14 @@ export default function BasicTable() {
               <StyledTableCell component="th" scope="row">
                 {row.item_code}
               </StyledTableCell>
+              <StyledTableCell align="right">{row.order_id}</StyledTableCell>
               <StyledTableCell align="right">{row.item_name}</StyledTableCell>
               <StyledTableCell align="right">{row.quantity}</StyledTableCell>
               <StyledTableCell align="right">{row.rating}</StyledTableCell>
               <StyledTableCell align="right">{row.deliveryDate}</StyledTableCell>
               <StyledTableCell align="right">{row.price}</StyledTableCell>
               <StyledTableCell align="right">{row.offer}</StyledTableCell>
-              <StyledTableCell align="right">{row.offer_price}</StyledTableCell>
+              {/* <StyledTableCell align="right">{row.offer_price}</StyledTableCell> */}
             </StyledTableRow>
           ))}
         </TableBody>
