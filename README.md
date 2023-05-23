@@ -1,6 +1,6 @@
 # Super Market App 
 
-This is a supermarket app with the backend written in Spring Boot using PostgreSQL as a database. 
+This is a supermarket app with the backend written in Spring Boot using PostgreSQL as a database. It uses React.js for the frontend.
 
 # How to run? 
 
